@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.idea/vcs.xml
+.idea/caches
+.idea/dictionaries
+.idea/runConfigurations.xml
+.idea/encodings.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/assetWizardSettings.xml
+
+# fastlane files
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
