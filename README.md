@@ -41,8 +41,8 @@ And add Tangem library to the dependencies (in an app or module build.gradle fil
 
 ```gradle 
 dependencies {
-    implementation 'com.github.TangemCash:tangem-core:0.1.0'
-    implementation 'com.github.TangemCash:tangem-sdk:0.1.0'
+    implementation 'com.github.tangemcash.tangem-sdk-android:tangem-core:0.1.0' 
+    implementation 'com.github.tangemcash.tangem-sdk-android:tangem-sdk:0.1.0'
 }
 ```
 Tangem Core is a JVM library (without Android dependencies) that provides core functionality of interacting with Tangem cards.
