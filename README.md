@@ -1,6 +1,4 @@
-[![Version](https://img.shields.io/cocoapods/v/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
-[![License](https://img.shields.io/cocoapods/l/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
-[![Platform](https://img.shields.io/cocoapods/p/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
+
 
 # Welcome to Tangem
 
@@ -9,9 +7,6 @@ The Tangem card is a self-custodial hardware wallet for blockchain assets. The m
 - [Getting Started](#getting-started)
 	- [Requirements](#requirements)
 	- [Installation](#installation)
-		- [CocoaPods](#cocoapods)
-		- [Swift Package Manager](#swift-package-manager)
-		- [Carthage](#carthage)
 - [Usage](#usage)
 	- [Initialization](#initialization)
 	- [Card interaction](#card-interaction)
