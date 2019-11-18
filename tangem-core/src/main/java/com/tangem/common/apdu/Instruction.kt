@@ -1,5 +1,9 @@
-package com.tangem.enums
+package com.tangem.common.apdu
 
+/**
+ * Instruction code that determines the type of the command that is sent to the Tangem card.
+ * It is used in the construction of [com.tangem.common.apdu.CommandApdu].
+ */
 enum class Instruction(var code: Int) {
     Unknown(0x00),
     Read(0xF2),
@@ -18,6 +22,7 @@ enum class Instruction(var code: Int) {
 
 
     companion object {
-        fun byCode(code: Int): Instruction = values().find { it.code == code } ?: Unknown
+        private val values = values()
+        fun byCode(code: Int): Instruction = values.find { it.code == code } ?: Unknown
     }
 }

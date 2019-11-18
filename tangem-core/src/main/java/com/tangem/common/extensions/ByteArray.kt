@@ -1,10 +1,13 @@
-package com.tangem.common.extentions
+package com.tangem.common.extensions
 
 import java.nio.ByteBuffer
 import java.security.MessageDigest
 import java.util.*
 import kotlin.experimental.and
 
+/**
+ * Extension functions for [ByteArray].
+ */
 
 fun ByteArray.toHexString() = joinToString("") { "%02x".format(it) }
 
@@ -25,9 +28,9 @@ fun ByteArray.toInt(): Int {
 }
 
 fun ByteArray.toDate(): Date {
-    val year = ((this[0] and 0xFF.toByte()).toInt() shl 8) or (this[1] and 0xFF.toByte()).toInt()
-    val month = this[2] - 1
-    val day = this[3].toInt()
+    val year = copyOfRange(0, 2).toInt()
+    val month = if (this.size > 2) this[2] - 1 else 0
+    val day = if (this.size > 3) this[3].toInt() else 0
     val cd = Calendar.getInstance()
     cd.set(year, month, day, 0, 0, 0)
     return cd.time

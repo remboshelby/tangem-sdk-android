@@ -1,9 +1,15 @@
 package com.tangem.common.apdu
 
 import com.tangem.common.tlv.Tlv
-import com.tangem.enums.StatusWord
 
-class ResponseApdu(val data: ByteArray) {
+/**
+ * Stores response data from the card and parses it to [Tlv] and [StatusWord].
+ *
+ * @property data Raw response from the card.
+ * @property sw Status word code, reflecting the status of the response.
+ * @property statusWord Parsed status word.
+ */
+class ResponseApdu(private val data: ByteArray) {
 
     private val sw1: Int = 0x00FF and data[data.size - 2].toInt()
     private val sw2: Int = 0x00FF and data[data.size - 1].toInt()
@@ -12,26 +18,22 @@ class ResponseApdu(val data: ByteArray) {
 
     val statusWord: StatusWord = StatusWord.byCode(sw)
 
+    /**
+     * Converts raw response data to the list of TLVs.
+     *
+     * @param encryptionKey key to decrypt response.
+     * (Encryption / decryption functionality is not implemented yet.)
+     */
     fun getTlvData(encryptionKey: ByteArray? = null): List<Tlv>? {
-        val tlvs = when {
-            data.size < 2 -> null
-            data.size == 2 -> emptyList()
-            else -> Tlv.fromBytes(data.copyOf(data.size - 2))
+        return when {
+            data.size <= 2 -> null
+            else -> Tlv.tlvListFromBytes(data.copyOf(data.size - 2))
         }
-        return flattenNestedTlvs(tlvs)
     }
 
-    private fun flattenNestedTlvs(tlvs: List<Tlv>?): List<Tlv>? =
-            tlvs?.flatMap {
-                if (it.tag.hasNestedTlv()) {
-                    Tlv.fromBytes(it.value)
-                } else {
-                    listOf(it)
-                }
-            }
 
     private fun decrypt(encryptionKey: ByteArray) {
-
+        TODO("not implemented")
     }
 
 }

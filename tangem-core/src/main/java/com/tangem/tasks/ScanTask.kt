@@ -3,86 +3,94 @@ package com.tangem.tasks
 import com.tangem.CardEnvironment
 import com.tangem.commands.Card
 import com.tangem.commands.CheckWalletCommand
-import com.tangem.commands.EllipticCurve
-import com.tangem.commands.ReadCardCommand
+import com.tangem.commands.ReadCommand
 import com.tangem.common.CompletionResult
-import com.tangem.crypto.generateRandomBytes
-import com.tangem.crypto.verify
+import com.tangem.crypto.CryptoUtils
 
+/**
+ * Events that [ScanTask] returns on completion of its commands.
+ */
 sealed class ScanEvent {
+
+    /**
+     * Contains data from a Tangem card after successful completion of [ReadCommand].
+     */
     data class OnReadEvent(val card: Card) : ScanEvent()
+
+    /**
+     * Shows whether the Tangem card was verified on completion of [CheckWalletCommand].
+     */
     data class OnVerifyEvent(val isGenuine: Boolean) : ScanEvent()
 }
 
-
+/**
+ * Task that allows to read Tangem card and verify its private key.
+ *
+ * It performs two commands, [ReadCommand] and [CheckWalletCommand], subsequently.
+ */
 internal class ScanTask : Task<ScanEvent>() {
-
-    private lateinit var cardData: Card
-    private lateinit var challenge: ByteArray
-    private lateinit var curve: EllipticCurve
-    private lateinit var walletPublickKey: ByteArray
 
     override fun onRun(cardEnvironment: CardEnvironment,
                        callback: (result: TaskEvent<ScanEvent>) -> Unit) {
 
-        val readCommand = ReadCardCommand()
-        sendCommand(readCommand, cardEnvironment) { readEvent ->
+        val readCommand = ReadCommand()
+        sendCommand(readCommand, cardEnvironment) { readResult ->
 
-            when (readEvent) {
+            when (readResult) {
+
+                is CompletionResult.Failure -> {
+                    if (readResult.error !is TaskError.UserCancelledError) {
+                        completeNfcSession(true, readResult.error)
+                    }
+                    callback(TaskEvent.Completion(readResult.error))
+                }
+
                 is CompletionResult.Success -> {
-                    cardData = readEvent.data
+                    val card = readResult.data
 
-                    callback(TaskEvent.Event(ScanEvent.OnReadEvent(cardData)))
+                    callback(TaskEvent.Event(ScanEvent.OnReadEvent(card)))
 
-                    if (cardData.curve != null && cardData.walletPublicKey != null) {
-                        curve = cardData.curve!!
-                        walletPublickKey = cardData.walletPublicKey!!
-                    } else {
-                        delegate?.onTaskError()
+                    if (card.curve == null || card.walletPublicKey == null) {
+                        completeNfcSession(true)
                         callback(TaskEvent.Completion(TaskError.CardError()))
+                        return@sendCommand
                     }
 
-                    val checkWalletCommand = prepareCheckWalletCommand(cardEnvironment)
+                    val challenge = CryptoUtils.generateRandomBytes(16)
+                    val checkWalletCommand = CheckWalletCommand(
+                            cardEnvironment.pin1,
+                            card.cardId,
+                            challenge)
 
-                    sendCommand(checkWalletCommand, cardEnvironment) { checkWalletEvent ->
-                        when (checkWalletEvent) {
+                    sendCommand(checkWalletCommand, cardEnvironment) { result ->
+                        when (result) {
+                            is CompletionResult.Failure -> {
+                                if (result.error !is TaskError.UserCancelledError) {
+                                    completeNfcSession(true, result.error)
+                                }
+                                callback(TaskEvent.Completion(result.error))
+                            }
+
                             is CompletionResult.Success -> {
-                                val checkWalletResponse = checkWalletEvent.data
-                                val verified = verify(walletPublickKey,
+                                completeNfcSession()
+                                val checkWalletResponse = result.data
+                                val verified = CryptoUtils.verify(
+                                        card.walletPublicKey,
                                         challenge + checkWalletResponse.salt,
                                         checkWalletResponse.walletSignature,
-                                        curve)
+                                        card.curve)
                                 if (verified) {
-                                    delegate?.onTaskCompleted()
-                                    callback(TaskEvent.Completion())
                                     callback(TaskEvent.Event(ScanEvent.OnVerifyEvent(true)))
+                                    callback(TaskEvent.Completion())
                                 } else {
-                                    delegate?.onTaskError()
                                     callback(TaskEvent.Completion(TaskError.VefificationFailed()))
                                 }
-                            }
-                            is CompletionResult.Failure -> {
-                                if (checkWalletEvent.error !is TaskError.UserCancelledError) delegate?.onTaskError()
-                                callback(TaskEvent.Completion(checkWalletEvent.error))
                             }
                         }
 
                     }
                 }
-                is CompletionResult.Failure -> {
-                    if (readEvent.error !is TaskError.UserCancelledError) delegate?.onTaskError()
-                    callback(TaskEvent.Completion(readEvent.error))
-                }
             }
         }
-    }
-
-    private fun prepareCheckWalletCommand(cardEnvironment: CardEnvironment): CheckWalletCommand {
-        challenge = generateRandomBytes(16)
-        return CheckWalletCommand(
-                cardEnvironment.pin1,
-                cardData.cardId,
-                challenge,
-                byteArrayOf())
     }
 }

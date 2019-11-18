@@ -1,6 +1,7 @@
 package com.tangem.tangem_sdk_new.nfc
 
 import android.nfc.Tag
+import android.nfc.TagLostException
 import android.nfc.tech.IsoDep
 import com.tangem.CardReader
 import com.tangem.Log
@@ -9,18 +10,23 @@ import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.ResponseApdu
 import com.tangem.tasks.TaskError
 
+/**
+ * Provides NFC communication between an Android application and Tangem card.
+ */
 class NfcReader : CardReader {
 
-    override var readingActive = false
+    var readingActive = false
+        private set
     var nfcEnabled = false
-    var isoDep: IsoDep? = null
+    var manager: NfcManager? = null
+    private var isoDep: IsoDep? = null
         set(value) {
-            // if tag is received, call connect first before transceiving data
+            // don't reassign when there's an active tag already
             if (field == null) {
                 field = value
+                // if tag is received, call connect first before transceiving data
                 connect()
             }
-            // don't reassign when there's an active tag already
             if (value == null) field = value
         }
 
@@ -30,7 +36,7 @@ class NfcReader : CardReader {
             if (value) {
                 // Stops reading and sends failure callback to a task
                 // if reading is cancelled (when user closes nfc bottom sheet dialog).
-                readingActive = false
+                closeSession()
                 callback?.invoke(CompletionResult.Failure(TaskError.UserCancelledError()))
             }
         }
@@ -38,9 +44,11 @@ class NfcReader : CardReader {
     var data: ByteArray? = null
     var callback: ((response: CompletionResult<ResponseApdu>) -> Unit)? = null
 
-    override fun setStartSession() {
+    override fun openSession() {
         readingActive = true
         readingCancelled = false
+        manager?.disableReaderMode()
+        manager?.enableReaderMode()
     }
 
     override fun closeSession() {
@@ -66,6 +74,10 @@ class NfcReader : CardReader {
         val rawResponse: ByteArray?
         try {
             rawResponse = isoDep?.transceive(data)
+        } catch (exception: TagLostException) {
+            callback?.invoke(CompletionResult.Failure(TaskError.TagLost()))
+            isoDep = null
+            return
         } catch (exception: Exception) {
             isoDep = null
             return
@@ -89,7 +101,6 @@ class NfcReader : CardReader {
         isoDep?.connect()
         isoDep?.timeout = 240000
         Log.i(this::class.simpleName!!, "Nfc session is started")
-
     }
 
 }

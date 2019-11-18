@@ -14,7 +14,10 @@ import com.tangem.tasks.TaskError
 import kotlinx.android.synthetic.main.layout_touch_card.*
 import kotlinx.android.synthetic.main.nfc_bottom_sheet.*
 
-
+/**
+ * Default implementation of [CardManagerDelegate].
+ * If no customisation is required, this is the preferred way to use Tangem SDK.
+ */
 class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDelegate {
 
     lateinit var activity: FragmentActivity
@@ -25,8 +28,7 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         setLogger()
     }
 
-    override fun onTaskStarted() {
-//        reader.isoDep = null
+    override fun onNfcSessionStarted() {
         reader.readingCancelled = false
         postUI { showReadingDialog(activity) }
         if (!reader.nfcEnabled) showNFCEnableDialog()
@@ -47,7 +49,7 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         }
         readingDialog?.setOnCancelListener {
             reader.readingCancelled = true
-//            reader.closeSession()
+            reader.closeSession()
             Log.i(this::class.simpleName!!, "readingCancelled is set to true")
         }
         readingDialog?.show()
@@ -58,7 +60,7 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         activity.supportFragmentManager.let { nfcEnableDialog?.show(it, NfcEnableDialog.TAG) }
     }
 
-    override fun showSecurityDelay(ms: Int) {
+    override fun onSecurityDelay(ms: Int) {
         postUI {
             readingDialog?.lTouchCard?.visibility = View.GONE
             readingDialog?.tvRemainingTime?.text = ms.div(100).toString()
@@ -69,8 +71,16 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         }
     }
 
-    override fun onTaskCompleted() {
-        reader.closeSession()
+    override fun onTagLost() {
+        postUI {
+            readingDialog?.lTouchCard?.visibility = View.VISIBLE
+            readingDialog?.flSecurityDelay?.visibility = View.GONE
+            readingDialog?.tvTaskTitle?.text = activity.getText(R.string.dialog_ready_to_scan)
+            readingDialog?.tvTaskText?.text = activity.getText(R.string.dialog_scan_text)
+        }
+    }
+
+    override fun onNfcSessionCompleted() {
         postUI {
             readingDialog?.lTouchCard?.visibility = View.GONE
             readingDialog?.flSecurityDelay?.visibility = View.GONE
@@ -80,8 +90,7 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         postUI(300) { readingDialog?.dismiss() }
     }
 
-    override fun onTaskError(error: TaskError?) {
-        reader.closeSession()
+    override fun onError(error: TaskError?) {
         postUI {
             readingDialog?.lTouchCard?.visibility = View.GONE
             readingDialog?.flSecurityDelay?.visibility = View.GONE
@@ -92,7 +101,7 @@ class DefaultCardManagerDelegate(private val reader: NfcReader) : CardManagerDel
         }
     }
 
-    override fun requestPin(callback: (result: CompletionResult<String>) -> Unit) {
+    override fun onPinRequested(callback: (result: CompletionResult<String>) -> Unit) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

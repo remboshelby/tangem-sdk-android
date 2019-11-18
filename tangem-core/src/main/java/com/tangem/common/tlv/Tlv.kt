@@ -1,23 +1,27 @@
 package com.tangem.common.tlv
 
+import com.tangem.Log
 import java.io.ByteArrayInputStream
 import java.io.IOException
 
+/**
+ * The data converted to the Tag Length Value protocol.
+ */
 class Tlv {
 
     val tag: TlvTag
     val value: ByteArray
-    val tagCode: Int
+    val tagRaw: Int
 
     constructor(tagCode: Int, value: ByteArray = byteArrayOf()) {
         this.tag = TlvTag.byCode(tagCode)
-        this.tagCode = tagCode
+        this.tagRaw = tagCode
         this.value = value
     }
 
     constructor(tag: TlvTag, value: ByteArray = byteArrayOf()) {
         this.tag = tag
-        this.tagCode = tag.code
+        this.tagRaw = tag.code
         this.value = value
     }
 
@@ -49,7 +53,7 @@ class Tlv {
         }
 
 
-        fun fromBytes(mData: ByteArray): List<Tlv> {
+        fun tlvListFromBytes(mData: ByteArray): List<Tlv>? {
             val tlvList = mutableListOf<Tlv>()
             val stream = ByteArrayInputStream(mData)
             var tlv: Tlv? = null
@@ -58,7 +62,8 @@ class Tlv {
                     tlv = Tlv.tlvFromBytes(stream)
                     if (tlv != null) tlvList.add(tlv)
                 } catch (e: IOException) {
-                    throw TlvMapperException("TLVError: " + e.message)
+                    Log.e(this::class.java.simpleName,"TLVError: " + e.message)
+                    return null
                 }
 
             } while (tlv != null)

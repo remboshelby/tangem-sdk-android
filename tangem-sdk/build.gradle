@@ -1,10 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.github.TangemCash'
-version '0.1.0'
+group = 'com.github.Tangem'
+version '0.2.0'
 
 android {
     compileSdkVersion 29
