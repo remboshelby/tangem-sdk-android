@@ -1,6 +1,4 @@
-[![Version](https://img.shields.io/cocoapods/v/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
-[![License](https://img.shields.io/cocoapods/l/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
-[![Platform](https://img.shields.io/cocoapods/p/TangemSdk.svg?style=flat)](https://cocoapods.org/pods/TangemSdk)
+
 
 # Welcome to Tangem
 
@@ -9,9 +7,6 @@ The Tangem card is a self-custodial hardware wallet for blockchain assets. The m
 - [Getting Started](#getting-started)
 	- [Requirements](#requirements)
 	- [Installation](#installation)
-		- [CocoaPods](#cocoapods)
-		- [Swift Package Manager](#swift-package-manager)
-		- [Carthage](#carthage)
 - [Usage](#usage)
 	- [Initialization](#initialization)
 	- [Card interaction](#card-interaction)
@@ -46,8 +41,8 @@ And add Tangem library to the dependencies (in an app or module build.gradle fil
 
 ```gradle 
 dependencies {
-    implementation 'com.github.TangemCash:tangem-core:0.1.0'
-    implementation 'com.github.TangemCash:tangem-sdk:0.1.0'
+    implementation 'com.github.tangemcash.tangem-sdk-android:tangem-core:0.1.0' 
+    implementation 'com.github.tangemcash.tangem-sdk-android:tangem-sdk:0.1.0'
 }
 ```
 Tangem Core is a JVM library (without Android dependencies) that provides core functionality of interacting with Tangem cards.
