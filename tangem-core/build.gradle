@@ -3,7 +3,7 @@ apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.Tangem'
-version '0.2.0'
+version '0.2.1'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
