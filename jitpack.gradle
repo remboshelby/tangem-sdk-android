@@ -1,0 +1,1 @@
+ext.jitpackSdk = [group: 'com.github.Tangem', version  : '0.3.0']

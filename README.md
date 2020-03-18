@@ -1,4 +1,5 @@
 
+[![Release](https://jitpack.io/v/Tangem/tangem-sdk-android.svg)]
 
 # Welcome to Tangem
 
@@ -41,8 +42,8 @@ And add Tangem library to the dependencies (in an app or module build.gradle fil
 
 ```gradle 
 dependencies {
-    implementation 'com.github.tangem.tangem-sdk-android:tangem-core:0.2.1' 
-    implementation 'com.github.tangem.tangem-sdk-android:tangem-sdk:0.2.1'
+    implementation "com.github.tangem.tangem-sdk-android:tangem-core:$latestVersionOfCore"
+    implementation "com.github.tangem.tangem-sdk-android:tangem-sdk:$latestVersionOfSdk"
 }
 ```
 Tangem Core is a JVM library (without Android dependencies) that provides core functionality of interacting with Tangem cards.
@@ -55,6 +56,7 @@ Tangem Sdk is an Android library that implements NFC interaction between Android
    <tech-list>
        <tech>android.nfc.tech.IsoDep</tech>
        <tech>android.nfc.tech.Ndef</tech>
+       <tech>android.nfc.tech.NfcV</tech>
    </tech-list>
 </resources>
 ```

@@ -1,4 +1,4 @@
-package com.tangem
+package com.tangem.common
 
 
 /**
@@ -10,7 +10,9 @@ data class CardEnvironment(
         val pin2: String = DEFAULT_PIN2,
         val cardId: String? = null,
         val terminalKeys: KeyPair? = null,
-        val encryptionKey: ByteArray? = null
+        var encryptionMode: EncryptionMode = EncryptionMode.NONE,
+        var encryptionKey: ByteArray? = null,
+        val cvc: ByteArray? = null
 ) {
 
     companion object {

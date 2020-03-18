@@ -1,11 +1,11 @@
 package com.tangem.commands
 
-import com.tangem.CardEnvironment
+import com.tangem.common.CardEnvironment
 import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.Instruction
 import com.tangem.common.apdu.ResponseApdu
-import com.tangem.common.extensions.calculateSha256
 import com.tangem.common.tlv.Tlv
+import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvMapper
 import com.tangem.common.tlv.TlvTag
 import com.tangem.tasks.TaskError
@@ -14,18 +14,24 @@ import java.util.*
 /**
  * Determines which type of data is required for signing.
  */
-enum class SigningMethod(val code: Int) {
-    SignHash(0),
-    SignRaw(1),
-    SignHashValidatedByIssuer(2),
-    SignRawValidatedByIssuer(3),
-    SignHashValidatedByIssuerAndWriteIssuerData(4),
-    SignRawValidatedByIssuerAndWriteIssuerData(5),
-    SignPos(6);
+data class SigningMethod(val rawValue: Int) {
+
+    fun contains(value: Int): Boolean {
+        return if (rawValue and 0x80 == 0) {
+            value == rawValue
+        } else {
+            rawValue and (0x01 shl value) != 0
+        }
+    }
 
     companion object {
-        private val values = values()
-        fun byCode(code: Int): SigningMethod? = values.find { it.code == code }
+        const val signHash = 0
+        const val signRaw = 1
+        const val signHashValidatedByIssuer = 2
+        const val signRawValidatedByIssuer = 3
+        const val signHashValidatedByIssuerAndWriteIssuerData = 4
+        const val signRawValidatedByIssuerAndWriteIssuerData = 5
+        const val signPos = 6
     }
 }
 
@@ -57,14 +63,19 @@ enum class CardStatus(val code: Int) {
     }
 }
 
-enum class ProductMask(val code: Byte) {
-    Note(0x01),
-    Tag(0x02),
-    Card(0x04);
+/**
+ * Mask of products enabled on card
+ * @property rawValue Products mask values,
+ * while flags definitions and values are in [ProductMask.Companion] as constants.
+ */
+data class ProductMask(val rawValue: Int) {
+
+    fun contains(value: Int): Boolean = (rawValue and value) != 0
 
     companion object {
-        private val values = values()
-        fun byCode(code: Byte): ProductMask? = values.find { it.code == code }
+        const val note = 0x01
+        const val tag = 0x02
+        const val idCard = 0x04
     }
 }
 
@@ -75,6 +86,8 @@ enum class ProductMask(val code: Byte) {
  * while flags definitions and values are in [SettingsMask.Companion] as constants.
  */
 data class SettingsMask(val rawValue: Int) {
+
+    fun contains(value: Int): Boolean = (rawValue and value) != 0
 
     companion object {
         const val isReusable = 0x0001
@@ -174,7 +187,7 @@ class Card(
         /**
          * Current status of the card.
          */
-        val status: CardStatus,
+        val status: CardStatus?,
 
         /**
          * Version of Tangem COS.
@@ -288,31 +301,31 @@ class Card(
 class ReadCommand : CommandSerializer<Card>() {
 
     override fun serialize(cardEnvironment: CardEnvironment): CommandApdu {
+        val tlvBuilder = TlvBuilder()
         /**
          *  [CardEnvironment] stores the pin1 value. If no pin1 value was set, it will contain
          *  default value of ‘000000’.
          *  In order to obtain card’s data, [ReadCommand] should use the correct pin 1 value.
          *  The card will not respond if wrong pin 1 has been submitted.
          */
-        val tlvData = mutableListOf(Tlv(TlvTag.Pin, cardEnvironment.pin1.calculateSha256()))
-
-        cardEnvironment.terminalKeys?.let { terminalKeys ->
-            Tlv(TlvTag.TerminalPublicKey, terminalKeys.publicKey)
-        }
-
-        return CommandApdu(Instruction.Read, tlvData)
+        tlvBuilder.append(TlvTag.Pin, cardEnvironment.pin1)
+        tlvBuilder.append(TlvTag.TerminalPublicKey, cardEnvironment.terminalKeys?.publicKey)
+        return CommandApdu(
+                Instruction.Read, tlvBuilder.serialize(),
+                cardEnvironment.encryptionMode, cardEnvironment.encryptionKey
+        )
     }
 
     override fun deserialize(cardEnvironment: CardEnvironment, responseApdu: ResponseApdu): Card? {
-        val tlvData = responseApdu.getTlvData() ?: return null
+        val tlvData = responseApdu.getTlvData(cardEnvironment.encryptionKey) ?: return null
 
         return try {
             val tlvMapper = TlvMapper(tlvData)
 
             Card(
-                    cardId = tlvMapper.map(TlvTag.CardId),
-                    manufacturerName = tlvMapper.map(TlvTag.ManufactureId),
-                    status = tlvMapper.map(TlvTag.Status),
+                    cardId = tlvMapper.mapOptional(TlvTag.CardId) ?: "",
+                    manufacturerName = tlvMapper.mapOptional(TlvTag.ManufactureId) ?: "",
+                    status = tlvMapper.mapOptional(TlvTag.Status),
 
                     firmwareVersion = tlvMapper.mapOptional(TlvTag.Firmware),
                     cardPublicKey = tlvMapper.mapOptional(TlvTag.CardPublicKey),
@@ -341,7 +354,7 @@ class ReadCommand : CommandSerializer<Card>() {
 
     private fun deserializeCardData(tlvData: List<Tlv>): CardData? {
         val cardDataTlvs = tlvData.find { it.tag == TlvTag.CardData }?.let {
-            Tlv.tlvListFromBytes(it.value)
+            Tlv.deserialize(it.value)
         }
         if (cardDataTlvs.isNullOrEmpty()) return null
 
