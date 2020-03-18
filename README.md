@@ -1,5 +1,5 @@
 
-[![Release](https://jitpack.io/v/Tangem/tangem-sdk-android.svg)]
+![Release](https://jitpack.io/v/Tangem/tangem-sdk-android.svg)
 
 # Welcome to Tangem
 
