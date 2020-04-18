@@ -1,0 +1,62 @@
+package com.tangem.tangemtest._main
+
+import android.content.res.Resources
+import android.os.Bundle
+import android.view.Menu
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupWithNavController
+import com.tangem.tangemtest.R
+import ru.dev.gbixahue.eu4d.lib.android.global.log.Log
+
+/**
+ * Created by Anton Zhilenkov on 19/03/2020.
+ */
+class MainActivity : AppCompatActivity() {
+
+    private val vm: MainViewModel by viewModels<MainViewModel>()
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.a_main)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val host: NavHostFragment = supportFragmentManager
+                .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
+
+        val navController = host.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        toolbar.setupWithNavController(navController, appBarConfiguration)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            val dest: String = try {
+                resources.getResourceName(destination.id)
+            } catch (e: Resources.NotFoundException) {
+                destination.id.toString()
+            }
+            Log.d(this, "Navigated to $dest")
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.nav_host_fragment).navigateUp(appBarConfiguration)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        val switchMenu = menu.findItem(R.id.action_favorite)
+        (switchMenu.actionView as? SwitchCompat)?.let {
+            it.setOnCheckedChangeListener { buttonView, isChecked -> vm.switchToggled(isChecked) }
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+}
