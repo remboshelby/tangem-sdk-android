@@ -6,6 +6,8 @@ orbs:
 jobs:
   build:
     executor: android/android
+    environment:
+      JVM_OPTS: -Xmx2048m
     steps:
       - checkout
       - run:
