@@ -19,6 +19,8 @@ import com.tangem.crypto.pbkdf2Hash
  */
 interface CardSessionRunnable<T : CommandResponse> {
 
+    val performPreflightRead: Boolean
+
     /**
      * The starting point for custom business logic.
      * Implement this interface and use [TangemSdk.startSessionWithRunnable] to run.
@@ -37,7 +39,7 @@ interface CardSessionRunnable<T : CommandResponse> {
  * @property viewDelegate is an  interface that allows interaction with users and shows relevant UI.
  * @property cardId ID, Unique Tangem card ID number. If not null, the SDK will check that you the card
  * with which you tapped a phone has this [cardId] and SDK will return
- * the [TangemSdkError.WrongCard] otherwise.
+ * the [TangemSdkError.WrongCardNumber] otherwise.
  * @property initialMessage A custom description that will be shown at the beginning of the NFC session.
  * If null, a default header and text body will be used.
  */
@@ -55,6 +57,8 @@ class CardSession(
      */
     private var isBusy = false
 
+    private var performPreflightRead = true
+
     /**
      * This metod starts a card session, performs preflight [ReadCommand],
      * invokes [CardSessionRunnable.run] and closes the session.
@@ -63,6 +67,8 @@ class CardSession(
      */
     fun <T : CardSessionRunnable<R>, R : CommandResponse> startWithRunnable(
             runnable: T, callback: (result: CompletionResult<R>) -> Unit) {
+
+        performPreflightRead = runnable.performPreflightRead
 
         start { session, error ->
             if (error != null) {
@@ -77,7 +83,16 @@ class CardSession(
             runnable.run(this) { result ->
                 when (result) {
                     is CompletionResult.Success -> stop()
-                    is CompletionResult.Failure -> stopWithError(result.error)
+                    is CompletionResult.Failure -> {
+                        if (result.error is TangemSdkError.ExtendedLengthNotSupported) {
+                            if (session.environment.terminalKeys != null) {
+                                session.environment.terminalKeys = null
+                                startWithRunnable(runnable, callback)
+                                return@run
+                            }
+                        }
+                        stopWithError(result.error)
+                    }
                 }
                 callback(result)
             }
@@ -93,6 +108,11 @@ class CardSession(
             startSession()
         } catch (error: TangemSdkError) {
             callback(this, error)
+        }
+
+        if (!performPreflightRead) {
+            callback(this, null)
+            return
         }
 
         preflightRead() { result ->
@@ -133,8 +153,8 @@ class CardSession(
                 is CompletionResult.Success -> {
                     val receivedCardId = result.data.cardId
                     if (cardId != null && receivedCardId != cardId) {
-                        stopWithError(TangemSdkError.WrongCard())
-                        callback(CompletionResult.Failure(TangemSdkError.WrongCard()))
+                        stopWithError(TangemSdkError.WrongCardNumber())
+                        callback(CompletionResult.Failure(TangemSdkError.WrongCardNumber()))
                         return@run
                     }
                     val allowedCardTypes = environment.cardFilter.allowedCardTypes
@@ -165,7 +185,9 @@ class CardSession(
      * Stops the current session on error.
      * @param error An error that will be shown.
      */
-    private fun stopWithError(error: Exception) {
+    private fun stopWithError(error: TangemSdkError) {
+        if (!isBusy) return
+
         reader.closeSession()
         isBusy = false
 
@@ -175,9 +197,12 @@ class CardSession(
             error.localizedMessage
         }
         if (error !is TangemSdkError.UserCancelled) {
-            Log.e("tag", "Finishing with error: $errorMessage")
-            viewDelegate.onError(errorMessage)
+            Log.e(tag, "Finishing with error: $errorMessage")
+            viewDelegate.onError(error)
+        } else {
+            Log.i(tag, "User cancelled NFC session")
         }
+
     }
 
     fun send(apdu: CommandApdu, callback: (result: CompletionResult<ResponseApdu>) -> Unit) {

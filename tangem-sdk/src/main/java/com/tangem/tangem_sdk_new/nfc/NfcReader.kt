@@ -10,6 +10,7 @@ import com.tangem.TangemSdkError
 import com.tangem.common.CompletionResult
 import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.ResponseApdu
+import com.tangem.common.extensions.toHexString
 
 /**
  * Provides NFC communication between an Android application and Tangem card.
@@ -26,7 +27,7 @@ class NfcReader : CardReader {
             if (field == null) {
                 field = value
                 // if tag is received, call connect first before transceiving data
-                connect()
+                if (value != null) connect()
             }
             if (value == null) field = value
         }
@@ -46,6 +47,7 @@ class NfcReader : CardReader {
     private var callback: ((response: CompletionResult<ResponseApdu>) -> Unit)? = null
 
     override fun openSession() {
+        Log.i(this::class.simpleName!!, "NFC reader is starting NFC session")
         readingActive = true
         readingCancelled = false
         manager?.disableReaderMode()
@@ -74,18 +76,26 @@ class NfcReader : CardReader {
 
         val rawResponse: ByteArray?
         try {
+            Log.i(this::class.simpleName!!, "Sending data to the card, size is ${data?.size}")
+            Log.v(this::class.simpleName!!, "Raw data that is to be send to the card: ${data?.toHexString()}")
             rawResponse = isoDep?.transceive(data)
+            Log.v(this::class.simpleName!!, "Raw data that was received from the card: ${rawResponse?.toHexString()}")
         } catch (exception: TagLostException) {
             callback?.invoke(CompletionResult.Failure(TangemSdkError.TagLost()))
             isoDep = null
             return
         } catch (exception: Exception) {
             Log.i(this::class.simpleName!!, exception.localizedMessage ?: "Error tranceiving data")
+            // The messages of errors can vary on different Android devices,
+            // but we try to identify it by parsing the message.
+            if (exception.message?.contains("length") == true) {
+                callback?.invoke(CompletionResult.Failure(TangemSdkError.ExtendedLengthNotSupported()))
+            }
             isoDep = null
             return
         }
         if (rawResponse != null) {
-            Log.i(this::class.simpleName!!, "Nfc response is received")
+            Log.i(this::class.simpleName!!, "Data from the card was received")
             data = null
         }
         rawResponse?.let { callback?.invoke(CompletionResult.Success(ResponseApdu(it))) }
@@ -103,7 +113,7 @@ class NfcReader : CardReader {
         isoDep?.close()
         isoDep?.connect()
         isoDep?.timeout = 240000
-        Log.i(this::class.simpleName!!, "Nfc session is started")
+        Log.i(this::class.simpleName!!, "NFC tag is connected")
     }
 
     private fun onNfcVDiscovered(nfcV: NfcV) {

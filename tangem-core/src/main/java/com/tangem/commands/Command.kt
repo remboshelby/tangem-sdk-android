@@ -19,6 +19,8 @@ interface CommandResponse
  */
 abstract class Command<T : CommandResponse> : CardSessionRunnable<T> {
 
+    override val performPreflightRead: Boolean = true
+
     /**
      * Serializes data into an array of [com.tangem.common.tlv.Tlv],
      * then creates [CommandApdu] with this data.
@@ -38,7 +40,7 @@ abstract class Command<T : CommandResponse> : CardSessionRunnable<T> {
     abstract fun deserialize(environment: SessionEnvironment, apdu: ResponseApdu): T
 
     override fun run(session: CardSession, callback: (result: CompletionResult<T>) -> Unit) {
-        Log.i("Command", "Sending ${this::class.java.simpleName}")
+        Log.i("Command", "Initializing ${this::class.java.simpleName}")
         if (session.environment.handleErrors) {
             if (performPreCheck(session, callback)) return
         }
