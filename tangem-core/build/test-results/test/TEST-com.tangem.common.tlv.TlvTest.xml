@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tangem.common.tlv.TlvTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-25T07:23:52" hostname="bamboo.local" time="0.029">
+<testsuite name="com.tangem.common.tlv.TlvTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-25T07:47:15" hostname="bamboo.local" time="0.029">
   <properties/>
   <testcase name="Bytes to Tlvs, only PIN" classname="com.tangem.common.tlv.TlvTest" time="0.014"/>
   <testcase name="TLVs to bytes, only PIN" classname="com.tangem.common.tlv.TlvTest" time="0.014"/>
