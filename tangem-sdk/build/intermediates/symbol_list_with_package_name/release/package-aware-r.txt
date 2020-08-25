@@ -1470,10 +1470,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable faceless_bust
-drawable hand_back
 drawable hand_full_card_horizontal
 drawable hand_full_card_vertical
-drawable hand_thumb
 drawable ic_action_nfc_gray
 drawable ic_close
 drawable ic_exclamation
@@ -1483,9 +1481,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable ic_nfc
-drawable ic_progress_bar_state_success
-drawable ic_progress_bar_state_success_anim
+drawable ic_success
+drawable ic_success_anim
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1647,7 +1644,6 @@ id guideline
 id home
 id icon
 id icon_group
-id imSmartphone
 id image
 id imvClose
 id imvExclamation
@@ -1661,6 +1657,7 @@ id italic
 id item_touch_helper_previous_elevation
 id ivHandCardHorizontal
 id ivHandCardVertical
+id ivPhone
 id labeled
 id largeLabel
 id left

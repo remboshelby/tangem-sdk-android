@@ -1469,10 +1469,8 @@ int drawable design_ic_visibility_off 0x0
 int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
 int drawable faceless_bust 0x0
-int drawable hand_back 0x0
 int drawable hand_full_card_horizontal 0x0
 int drawable hand_full_card_vertical 0x0
-int drawable hand_thumb 0x0
 int drawable ic_action_nfc_gray 0x0
 int drawable ic_close 0x0
 int drawable ic_exclamation 0x0
@@ -1482,9 +1480,8 @@ int drawable ic_mtrl_checked_circle 0x0
 int drawable ic_mtrl_chip_checked_black 0x0
 int drawable ic_mtrl_chip_checked_circle 0x0
 int drawable ic_mtrl_chip_close_circle 0x0
-int drawable ic_nfc 0x0
-int drawable ic_progress_bar_state_success 0x0
-int drawable ic_progress_bar_state_success_anim 0x0
+int drawable ic_success 0x0
+int drawable ic_success_anim 0x0
 int drawable material_ic_calendar_black_24dp 0x0
 int drawable material_ic_clear_black_24dp 0x0
 int drawable material_ic_edit_black_24dp 0x0
@@ -1646,7 +1643,6 @@ int id guideline 0x0
 int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
-int id imSmartphone 0x0
 int id image 0x0
 int id imvClose 0x0
 int id imvExclamation 0x0
@@ -1660,6 +1656,7 @@ int id italic 0x0
 int id item_touch_helper_previous_elevation 0x0
 int id ivHandCardHorizontal 0x0
 int id ivHandCardVertical 0x0
+int id ivPhone 0x0
 int id labeled 0x0
 int id largeLabel 0x0
 int id left 0x0

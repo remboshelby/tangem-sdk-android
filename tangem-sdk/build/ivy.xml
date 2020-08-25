@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="com.Tangem" module="tangem-sdk" revision="0.0.1" status="integration" publication="20200825104737"/>
+  <info organisation="com.tangem" module="tangem-sdk" revision="1.44.0" status="integration" publication="20200825225425"/>
   <configurations>
     <conf name="_internal_aapt2_binary" visibility="private" transitive="false"/>
     <conf name="androidApis" visibility="public"/>
@@ -195,7 +195,7 @@
     <dependency org="androidx.test.espresso" name="espresso-core" rev="3.2.0" conf="androidTestImplementation-&gt;default"/>
     <dependency org="ar.com.synergian" name="wagon-git" rev="0.3.0" conf="deployLibrary-&gt;default"/>
     <dependency org="org.jetbrains.kotlin" name="kotlin-android-extensions-runtime" rev="1.4.0" conf="implementation-&gt;default"/>
-    <dependency org="com.Tangem" name="tangem-core" rev="0.0.1" conf="implementation-&gt;default"/>
+    <dependency org="com.tangem" name="tangem-core" rev="1.44.0" conf="implementation-&gt;default"/>
     <dependency org="org.jetbrains.kotlin" name="kotlin-stdlib-jdk8" rev="1.4.0" conf="implementation-&gt;default"/>
     <dependency org="org.jetbrains.kotlin" name="kotlin-reflect" rev="1.4.0" conf="implementation-&gt;default"/>
     <dependency org="org.jetbrains.kotlinx" name="kotlinx-coroutines-core" rev="1.3.9" conf="implementation-&gt;default"/>

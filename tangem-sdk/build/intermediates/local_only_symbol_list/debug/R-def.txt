@@ -46,18 +46,15 @@ dimen tap_in_info_message_height
 dimen tap_in_layout_hand_margin_top
 drawable card_horizontal
 drawable faceless_bust
-drawable hand_back
 drawable hand_full_card_horizontal
 drawable hand_full_card_vertical
-drawable hand_thumb
 drawable ic_action_nfc_gray
 drawable ic_close
 drawable ic_exclamation
 drawable ic_exclamation_anim
 drawable ic_how_to_play
-drawable ic_nfc
-drawable ic_progress_bar_state_success
-drawable ic_progress_bar_state_success_anim
+drawable ic_success
+drawable ic_success_anim
 drawable phone
 drawable progress_bar
 drawable progress_bar_indeterminate
@@ -76,7 +73,6 @@ id expandingView
 id flBackground
 id flLayout
 id guideline
-id imSmartphone
 id imvClose
 id imvExclamation
 id imvFacelessBust
@@ -85,6 +81,7 @@ id imvPhone
 id imvSuccess
 id ivHandCardHorizontal
 id ivHandCardVertical
+id ivPhone
 id llButtonsContainer
 id llChangePin
 id llHand
