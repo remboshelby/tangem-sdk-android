@@ -1,4 +1,4 @@
-package com.tangem.tangem_sdk_new.howTo
+package com.tangem.tangem_sdk_new.ui.widget.howTo
 
 /**
  * Created by Anton Zhilenkov on 11/10/2020.
