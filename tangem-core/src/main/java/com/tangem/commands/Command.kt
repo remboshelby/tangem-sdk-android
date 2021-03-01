@@ -1,6 +1,7 @@
 package com.tangem.commands
 
 import com.tangem.*
+import com.tangem.commands.common.card.Card
 import com.tangem.common.CompletionResult
 import com.tangem.common.PinCode
 import com.tangem.common.apdu.*
@@ -86,12 +87,10 @@ abstract class Command<T : CommandResponse> : ApduSerializable<T>, CardSessionRu
                     if (session.environment.handleErrors) {
                         val error = mapError(session.environment.card, result.error)
                         if (error is TangemSdkError.Pin1Required) {
-                            session.environment.pin1 = null
                             requestPin(PinType.Pin1, session, callback)
                             return@transceiveApdu
                         }
                         if (error is TangemSdkError.Pin2OrCvcRequired) {
-                            session.environment.pin2 = null
                             requestPin(PinType.Pin2, session, callback)
                             return@transceiveApdu
                         }
@@ -134,19 +133,15 @@ abstract class Command<T : CommandResponse> : ApduSerializable<T>, CardSessionRu
                         }
                         StatusWord.NeedPause -> {
                             // NeedPause is returned from the card whenever security delay is triggered.
-                            val remainingTime =
-                                    deserializeSecurityDelay(responseApdu)
+                            val remainingTime = deserializeSecurityDelay(responseApdu)
                             if (remainingTime != null) {
                                 session.viewDelegate.onSecurityDelay(
-                                        remainingTime,
-                                        session.environment.card?.pauseBeforePin2 ?: 0
+                                    remainingTime,
+                                    session.environment.card?.pauseBeforePin2 ?: 0
                                 )
                             }
-                            Log.i(
-                                    this::class.simpleName!!,
-                                    "Nfc command ${this::class.simpleName!!} " +
-                                            "triggered security delay of $remainingTime milliseconds"
-                            )
+                            Log.write(SecurityDelayMessage(remainingTime ?: 0,
+                                session.environment.card?.pauseBeforePin2 ?: 0))
                             transceiveApdu(apdu, session, callback)
                         }
                         StatusWord.NeedEncryption -> {
@@ -181,6 +176,7 @@ abstract class Command<T : CommandResponse> : ApduSerializable<T>, CardSessionRu
                 is CompletionResult.Failure ->
                     if (result.error is TangemSdkError.TagLost) {
                         session.viewDelegate.onTagLost()
+                        Log.e(this::class.java.simpleName, "Tag lost")
                     } else {
                         callback(CompletionResult.Failure(result.error))
                     }
@@ -203,7 +199,12 @@ abstract class Command<T : CommandResponse> : ApduSerializable<T>, CardSessionRu
     private fun requestPin(pinType: PinType,
                            session: CardSession, callback: (result: CompletionResult<T>) -> Unit) {
         session.pause()
-        session.viewDelegate.onPinRequested(pinType) { pin ->
+        val isFirstAttempt = pinType.isWrongPinEntered(session.environment)
+        when (pinType) {
+            PinType.Pin1 -> session.environment.pin1 = null
+            PinType.Pin2 -> session.environment.pin2 = null
+        }
+        session.viewDelegate.onPinRequested(pinType, isFirstAttempt) { pin ->
             when (pinType) {
                 PinType.Pin1 -> session.environment.pin1 = PinCode(pin)
                 PinType.Pin2 -> session.environment.pin2 = PinCode(pin)

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d nouvelle notification</item>
+    <item quantity="other">%d nouvelles notifications</item>
+  </plurals>
     <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Revenir à l\'accueil"</string>
     <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Revenir en haut de la page"</string>
     <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Autres options"</string>
@@ -27,6 +31,10 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Partager avec"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="bottomsheet_action_expand_halfway">Développer en entier</string>
+    <string name="character_counter_content_description">Caractères saisis %1$d sur %2$d</string>
+    <string name="character_counter_overflowed_content_description">Nombre maximal de caractères dépassé : %1$d sur %2$d</string>
+    <string name="clear_text_end_icon_content_description">Effacer le texte</string>
     <string name="common_cancel">Annuler </string>
     <string name="common_continue">Continuer </string>
     <string name="common_error"> Erreur </string>
@@ -41,12 +49,12 @@
     <string name="error_cannot_be_depersonalized">Cette carte ne peut pas être dépersonnalisée. </string>
     <string name="error_cannot_be_signed">Ces données ne peuvent pas être signées </string>
     <string name="error_card_error">Des données importantes manquent sur votre carte </string>
-    <string name="error_card_is_empty">Créez un portefeuille pour signer les données </string>
     <string name="error_card_verification_failed">Erreur de validation de la carte </string>
     <string name="error_data_cannot_be_written">Les données ne peuvent pas être écrites sur la carte </string>
     <string name="error_data_size_too_large">La taille des données dépasse la limite maximale de 512 bytes </string>
     <string name="error_data_size_too_large_extended">La taille des données dépasse la limite maximale de 32 kilo-bytes </string>
     <string name="error_empty_hashes">Il n\'y a rien à signer ici </string>
+    <string name="error_icon_content_description">Erreur</string>
     <string name="error_invalid_response">Réponse incorrecte</string>
     <string name="error_missing_counter">Les données ne peuvent pas être écrites sur la carte car il n\'y a pas de compteur </string>
     <string name="error_missing_issuer_public_key">La clé publique de l\'émetteur est manquante </string>
@@ -60,24 +68,80 @@
     <string name="error_pin2_cannot_be_changed">Le mot de passe PIN2 ne peut pas être modifié </string>
     <string name="error_pin2_required">Mot de passe est requis </string>
     <string name="error_purge_prohibited">La configuration de cette carte ne permet pas d\'effacer le portefeuille </string>
-    <string name="error_purged">Vous ne pouvez pas signer les données avec ce portefeuille car la carte a été effacée </string>
     <string name="error_tag_lost">Tag est perdu </string>
     <string name="error_user_cancelled">L\'utilisateur a annulé l\'opération </string>
     <string name="error_verification_failed">Erreur de validation des données </string>
     <string name="error_wrong_card">Mauvaise carte </string>
     <string name="error_wrong_card_number">Vous avez connecté la mauvaise carte. Pour poursuivre ce processus, l\'identificateur de la carte dans l\'application doit correspondre à votre identificateur physique de la carte.</string>
     <string name="error_wrong_card_type">Cette carte est personnalisée pour une autre application. Veuillez lire les informations sur votre carte et télécharger l\'application correspondante.</string>
+    <string name="exposed_dropdown_menu_content_description">Afficher le menu déroulant</string>
     <string name="generic_error_code">Une erreur s\'est produite lors de l\'opération. Code : %s</string>
-    <string name="how_to_unknown_detected">La connexion a été établie. Votre antenne NFC se trouve ici </string>
+    <string name="how_to_button">Consigne</string>
+    <string name="how_to_got_it_button">OK, j’ai compris !</string>
+    <string name="how_to_known_antenna_is_here">Votre antenne NFC est ici</string>
+    <string name="how_to_known_here_how_to_use">Ici est expliqué comment utiliser les cartes Tangem avec (le téléphone)</string>
+    <string name="how_to_known_tap_card_to_the_back">Posez votre carte sur le dos du téléphone</string>
+    <string name="how_to_known_tap_card_to_the_front">Posez votre carte sur l’écran du téléphone</string>
+    <string name="how_to_nfc_detected">Vous venez de trouver l’emplacement de votre antenne NFC. Veuillez le mémoriser</string>
+    <string name="how_to_show_again_button">Montrer encore une fois</string>
+    <string name="how_to_try_other_way_button">Ceci ne fonctionne toujours pas</string>
     <string name="how_to_unknown_move_card">Pour déterminer où se trouve votre antenne NFC, déplacez la carte de haut en bas jusqu\'à ce que la confirmation soit reçue </string>
     <string name="how_to_unknown_nothing_happened">Aucun résultat? Essayez de retirer la carte de votre téléphone, puis de la reappuyer </string>
     <string name="how_to_unknown_tap_card">Appuyez votre carte au dos de votre téléphone </string>
+    <string name="icon_content_description">Icône de la boîte de dialogue</string>
+    <string name="item_view_role_description">Tabulation</string>
+    <string name="material_clock_toggle_content_description">Sélectionner le format AM ou PM</string>
+    <string name="material_hour_selection">Sélectionnez une heure</string>
+    <string name="material_hour_suffix">%1$s h</string>
+    <string name="material_minute_selection">Sélectionner des minutes</string>
+    <string name="material_minute_suffix">%1$s min</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Passer en mode horloge pour la saisie de l\'heure.</string>
+    <string name="material_timepicker_hour">Heure</string>
+    <string name="material_timepicker_minute">Minute</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Sélectionner l\'heure</string>
+    <string name="material_timepicker_text_input_mode_description">Passer en mode saisie de texte pour la saisie de l\'heure.</string>
+    <string name="mtrl_badge_numberless_content_description">Nouvelle notification</string>
+    <string name="mtrl_chip_close_icon_content_description">Supprimer %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Plus de %1$d nouvelles notifications</string>
+    <string name="mtrl_picker_a11y_next_month">Passer au mois suivant</string>
+    <string name="mtrl_picker_a11y_prev_month">Passer au mois précédent</string>
+    <string name="mtrl_picker_announce_current_selection">Sélection actuelle : %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Sélectionnez une date</string>
+    <string name="mtrl_picker_date_header_unselected">Date sélectionnée</string>
+    <string name="mtrl_picker_day_of_week_column_header">Colonne du jour de la semaine : %1$s</string>
+    <string name="mtrl_picker_invalid_format">Format incorrect.</string>
+    <string name="mtrl_picker_invalid_format_example">Exemple : %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Utiliser %1$s</string>
+    <string name="mtrl_picker_invalid_range">Plage non valide.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Accéder à l\'année %1$s</string>
+    <string name="mtrl_picker_out_of_range">Hors de portée : %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Date de début – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Date de fin</string>
+    <string name="mtrl_picker_range_header_selected">%1$s - %2$s</string>
+    <string name="mtrl_picker_range_header_title">Sélectionnez une période</string>
+    <string name="mtrl_picker_range_header_unselected">Date de début – Date de fin</string>
+    <string name="mtrl_picker_save">Enregistrer</string>
+    <string name="mtrl_picker_text_input_date_hint">Date</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Date de fin</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Date de début</string>
+    <string name="mtrl_picker_text_input_day_abbr">j</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">a</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Passer au mode de saisie Agenda</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Appuyer pour sélectionner un jour</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Passer au mode de saisie Texte</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Appuyer pour sélectionner une année</string>
     <string name="nfc_alert_default">Tenez votre iPhone à côté de la carte </string>
     <string name="nfc_alert_default_done">Exécuté </string>
     <string name="nfc_alert_sign_completed">Transaction a été signée avec succès </string>
     <string name="nfc_seconds_left">Il reste %s </string>
     <string name="nfc_session_timeout">Dépassement de temps imparti de la séance. Essayez encore une fois </string>
     <string name="nfc_stuck_error">Il semble que NFC ne fonctionne pas correctement sur votre iPhone </string>
+    <string name="password_toggle_content_description">Afficher le mot de passe</string>
     <string name="pin1">Code d’accès </string>
     <string name="pin2">Mot de passe </string>
     <string name="pin_change_code_format">Modifier %s</string>

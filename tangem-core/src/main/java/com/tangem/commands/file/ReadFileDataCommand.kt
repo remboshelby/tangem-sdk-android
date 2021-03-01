@@ -1,18 +1,15 @@
 package com.tangem.commands.file
 
-import com.tangem.CardSession
-import com.tangem.SessionEnvironment
-import com.tangem.TangemError
-import com.tangem.TangemSdkError
-import com.tangem.commands.Card
-import com.tangem.commands.CardStatus
+import com.tangem.*
 import com.tangem.commands.Command
 import com.tangem.commands.CommandResponse
+import com.tangem.commands.WriteIssuerExtraDataCommand
+import com.tangem.commands.common.card.Card
+import com.tangem.commands.common.card.CardStatus
 import com.tangem.common.CompletionResult
 import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.Instruction
 import com.tangem.common.apdu.ResponseApdu
-import com.tangem.common.extensions.getFirmwareNumber
 import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
@@ -52,7 +49,7 @@ class ReadFileDataCommand(
         if (card.status == CardStatus.NotPersonalized) {
             return TangemSdkError.NotPersonalized()
         }
-        if (card.getFirmwareNumber() ?: 0.0 < 3.29) {
+        if (card.firmwareVersion < FirmwareConstraints.AvailabilityVersions.files) {
             return TangemSdkError.FirmwareNotSupported()
         }
         return null
@@ -77,6 +74,7 @@ class ReadFileDataCommand(
     ) {
 
         if (dataSize != 0) {
+            Log.write(DelayMessage(dataSize, offset, WriteIssuerExtraDataCommand.SINGLE_WRITE_SIZE))
             session.viewDelegate.onDelay(
                     dataSize, offset, WriteFileDataCommand.SINGLE_WRITE_SIZE
             )

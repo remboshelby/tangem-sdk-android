@@ -4,7 +4,17 @@
             "outputFile": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/bamboo/.gradle/caches/transforms-2/files-2.1/2b7c612c68efaedabcd3840aef459245/appcompat-1.2.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/bamboo/.gradle/caches/transforms-2/files-2.1/b905a19050242c3ad2dc3861778cff53/appcompat-1.2.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

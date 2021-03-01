@@ -1,7 +1,7 @@
 package com.tangem
 
-import com.tangem.commands.Card
 import com.tangem.commands.ReadCommand
+import com.tangem.commands.common.card.Card
 import com.tangem.common.apdu.StatusWord
 import com.tangem.tasks.ScanTask
 
@@ -36,11 +36,11 @@ sealed class TangemSdkError(final override val code: Int) : Exception(code.toStr
 
     class SerializeCommandError : TangemSdkError(20001)
     class DeserializeApduFailed : TangemSdkError(20002)
-    class EncodingFailedTypeMismatch : TangemSdkError(20003)
-    class EncodingFailed : TangemSdkError(20004)
-    class DecodingFailedMissingTag : TangemSdkError(20005)
-    class DecodingFailedTypeMismatch : TangemSdkError(20006)
-    class DecodingFailed : TangemSdkError(20007)
+    class EncodingFailedTypeMismatch(override var customMessage: String) : TangemSdkError(20003)
+    class EncodingFailed(override var customMessage: String) : TangemSdkError(20004)
+    class DecodingFailedMissingTag(override var customMessage: String) : TangemSdkError(20005)
+    class DecodingFailedTypeMismatch(override var customMessage: String) : TangemSdkError(20006)
+    class DecodingFailed(override var customMessage: String) : TangemSdkError(20007)
     class InvalidResponse : TangemSdkError(20008)
 
     /**
@@ -76,6 +76,7 @@ sealed class TangemSdkError(final override val code: Int) : Exception(code.toStr
      */
     class NeedEncryption : TangemSdkError(30006)
     class FileNotFound : TangemSdkError(30007)
+    class WalletNotFound : TangemSdkError(30008)
 
     //Personalization Errors
     class AlreadyPersonalized : TangemSdkError(40101)
@@ -85,9 +86,12 @@ sealed class TangemSdkError(final override val code: Int) : Exception(code.toStr
 
     //Read Errors
     class Pin1Required : TangemSdkError(40401)
+    class CardReadWrongWallet : TangemSdkError(40402)
 
     //CreateWallet Errors
     class AlreadyCreated : TangemSdkError(40501)
+    class WalletIndexExceedsMaxValue : TangemSdkError(40502)
+    class MaxNumberOfWalletsCreated : TangemSdkError(40503)
 
     //PurgeWallet Errors
     class PurgeWalletProhibited : TangemSdkError(40601)
@@ -140,6 +144,11 @@ sealed class TangemSdkError(final override val code: Int) : Exception(code.toStr
     class OverwritingDataIsProhibited : TangemSdkError(40008)
     class DataCannotBeWritten : TangemSdkError(40009)
     class MissingIssuerPubicKey : TangemSdkError(40010)
+    class CardVerificationFailed : TangemSdkError(40011)
+
+    class WrongPin1 : TangemSdkError(40012)
+    class WrongPin2 : TangemSdkError(40013)
+
 
     //SDK Errors
     class UnknownError: TangemSdkError(50001)

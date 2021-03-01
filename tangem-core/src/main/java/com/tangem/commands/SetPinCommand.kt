@@ -1,6 +1,7 @@
 package com.tangem.commands
 
 import com.tangem.*
+import com.tangem.commands.common.card.Card
 import com.tangem.common.CompletionResult
 import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.Instruction
@@ -87,7 +88,7 @@ class SetPinCommand(
         val tlvData = apdu.getTlvData() ?: throw TangemSdkError.DeserializeApduFailed()
 
         val status = SetPinStatus.fromStatusWord(apdu.statusWord)
-                ?: throw TangemSdkError.DecodingFailed()
+                ?: throw TangemSdkError.DecodingFailed("Failed to parse set pin status")
 
         val decoder = TlvDecoder(tlvData)
         return SetPinResponse(
@@ -133,5 +134,12 @@ enum class SetPinStatus {
                 else -> null
             }
         }
+    }
+}
+
+fun PinType.isWrongPinEntered(environment: SessionEnvironment?): Boolean {
+    return when (this) {
+        PinType.Pin1 -> environment?.pin1?.isDefault == true
+        PinType.Pin2 -> environment?.pin2?.isDefault == true
     }
 }

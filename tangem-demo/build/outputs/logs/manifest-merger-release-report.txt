@@ -5,50 +5,50 @@ INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/t
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:2:1-23:12
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:2:1-23:12
 MERGED from [:tangem-sdk] /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-14:12
-MERGED from [androidx.core:core-ktx:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/12c72e4917d07e42bd145235e4467917/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
-MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f7b4901aede3b06a18d4615205d6e71/jetified-android-driver-1.4.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.material:material:1.3.0-alpha01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/64e151410b975bdf895a1a873f27dc35/material-1.3.0-alpha01/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2b7c612c68efaedabcd3840aef459245/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7df098a93aa7b6204015d47c2f29db76/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/772b43e65fd9cdd49562a69c56824a8f/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c498cc0e40f6766c45703aab8e336a3f/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/185ed02d09747ead4f592cc2281d18a6/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/5c7ca5a19c6ce30f0251eae5b0a3ff5f/transition-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9587f9f46fa7188879d5ae96a561bc5/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a4f031a03acc4b6f811c0a4a91be49ea/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/82f3939e69ff6dafda58803a0427d317/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/dac1dbf945c8f32a4aee8308d860285f/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9f0e47eebf7898e7801427b02f13eefe/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b1270244028f48246b48a88ee2b0de7f/fragment-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3b946db2288ee7997c9d8ba29571615c/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c477ef94513275da8b2045ccccc42e30/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/afce4e51942d15c240cb87046a1fcaea/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2aa0a2ee8a6dcdd35e327cf743e130a2/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/18e9147ffb8adbc7cbfcaa2b9cc1520c/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4d72874c021a8c5d194cfb81255c7aae/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:17:1-32:12
-MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3aea8a31665cfbcefcea5cfb194c6204/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0da606dba75aa3055163300ffcf0663/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/fea53a008ca77c6e7ab27014e86925ff/jetified-library-1.0.1/AndroidManifest.xml:2:1-13:12
-MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/bf25e78d6e7c496f89b36d1a446f8398/jetified-armadillo-0.9.0/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e7757e215e5b4da7b59c0f65f0ae1112/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/811e8283590ad4b0cd2b5046c4c74f00/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f71042e0b96e793cf7eeb0f398c6a869/lifecycle-livedata-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e32f2845c270707c50dc2f2ea933589a/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e20738019ec98f500c0958b330c20a4d/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/387b49d55aa124882e2cd219f348ca1f/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1553bb79ba425b739920d4e5ea3e7214/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/79ca2f613d7fbe54de5d37462af7f8fe/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f0f8addf3c21f52080505331c6e2114/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/222e1a032e9fbfe44b34ec1b44253fe5/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7d1b026927e175086c2760a3f9a4c315/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e8f4a8b30d31971d96fcaa641681be5/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6ad58be18349e0dad8119d7f71816cf5/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/477ed46e96f9866987d128ed1745a811/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f8d9ae89971e17b05dabae4100543c00/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7454bbbc7799ee6dc11242836778dd32/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee43ee57c3c3ac7dbca8bb7e98acb629/jetified-timber-4.7.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1c1185f8d561b3d641092614c1346a71/jetified-core-ktx-1.3.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cf8d25af7beadb63e644f5dc1f2b6846/jetified-android-driver-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.3.0-rc01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1a9e4a04dbd148d28e1a0e2a27974d0d/material-1.3.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/960dd4c8119c30a31e84463426297f1d/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b905a19050242c3ad2dc3861778cff53/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e7313a4aec5e4742c0e645ef860c149/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a0811490bb7ff2b25446c8c33dd262ff/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1ae79c4e34bbf6d756774020bcac2fd3/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/53d8cee3dea8455ed8547e25f21312c8/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3015b5c48d0d4d837380dc240c63aefc/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/51ded4a86691ff1d39bf7b2a8c0f5127/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3ccd02a969b2a153596ccde49aa18522/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8846af12a7b7da881b5e99ed0682c6fe/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/d750c4b0f55d6b90d7d8eb815c09605c/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/69be56fa15e08ce4d102388addc48ece/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a3bee26b4f7f349afbe0c5e5fdcfb336/fragment-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cbb3a23956e889e01839844b0fe6a0df/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/839e299b5e776c98614a8c71897fcb3c/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4ad851b1e580e3a5cd86a0e765e7a2b1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7da989053c2edccb32cff1487b72600c/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/01749dddef9e842490cae82d0d08b7c7/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/765eccdc62488fe18a5f1d2160d5f3ca/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e3fb91c56bb3b3d4c9c9e437e85b81fb/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1b9dce5d4d8417fa5b659afc941d4f03/jetified-library-1.0.1/AndroidManifest.xml:2:1-13:12
+MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6b9783f87a2a94b5ee80f969c50c66ed/jetified-armadillo-0.9.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e8e7bc87aa2b1b888a01b7b6e624881d/jetified-timber-4.7.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e79d83debe6fb965fb8b97bdc1eb4440/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/93f211e8bd47cb38b2626334e0d88194/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0f368a97b93d5249a39fefb6ac9b7f3/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9704f3f7b23846c3ef1ef194526be36c/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9202160f884f55c2ed516be6a5220bc/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/efee5740b49edc14dc523c6bdf7bf58a/lifecycle-livedata-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/098a4f20b4b284eb82666c84d28833e1/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/234064bf8d7b746640288c5b58767c27/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/0b4eacdaa0b17d2fe7fe1b533bb4813a/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8ac55f5e45f841c3b1c5b623035a904b/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f6aeb0f2de965815c622567080b8b852/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c2bf00ee9dc64f0ddbada6ba51cc8526/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a54acca510d96927e63d725d9af2eceb/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/88df583b49806e00946b3169ae0cd5c4/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a44db29d43cfec32ad7d65489f69212a/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/711d3d5c263413b5efaf81d09fb46884/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:2:1-23:12
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:2:1-23:12
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:2:1-23:12
@@ -72,24 +72,24 @@ ADDED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tang
 		ADDED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:6:5-21:19
-MERGED from [com.google.android.material:material:1.3.0-alpha01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/64e151410b975bdf895a1a873f27dc35/material-1.3.0-alpha01/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.3.0-alpha01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/64e151410b975bdf895a1a873f27dc35/material-1.3.0-alpha01/AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7df098a93aa7b6204015d47c2f29db76/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7df098a93aa7b6204015d47c2f29db76/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/772b43e65fd9cdd49562a69c56824a8f/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/772b43e65fd9cdd49562a69c56824a8f/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:24:5-89
-MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
-MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/fea53a008ca77c6e7ab27014e86925ff/jetified-library-1.0.1/AndroidManifest.xml:11:5-20
-MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/fea53a008ca77c6e7ab27014e86925ff/jetified-library-1.0.1/AndroidManifest.xml:11:5-20
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7d1b026927e175086c2760a3f9a4c315/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7d1b026927e175086c2760a3f9a4c315/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee43ee57c3c3ac7dbca8bb7e98acb629/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
-MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee43ee57c3c3ac7dbca8bb7e98acb629/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.material:material:1.3.0-rc01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1a9e4a04dbd148d28e1a0e2a27974d0d/material-1.3.0-rc01/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0-rc01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1a9e4a04dbd148d28e1a0e2a27974d0d/material-1.3.0-rc01/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/960dd4c8119c30a31e84463426297f1d/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/960dd4c8119c30a31e84463426297f1d/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a0811490bb7ff2b25446c8c33dd262ff/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a0811490bb7ff2b25446c8c33dd262ff/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1b9dce5d4d8417fa5b659afc941d4f03/jetified-library-1.0.1/AndroidManifest.xml:11:5-20
+MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1b9dce5d4d8417fa5b659afc941d4f03/jetified-library-1.0.1/AndroidManifest.xml:11:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e8e7bc87aa2b1b888a01b7b6e624881d/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e8e7bc87aa2b1b888a01b7b6e624881d/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/93f211e8bd47cb38b2626334e0d88194/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/93f211e8bd47cb38b2626334e0d88194/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml:11:9-35
 	android:label
@@ -124,94 +124,94 @@ INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/t
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml
 MERGED from [:tangem-sdk] /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
 MERGED from [:tangem-sdk] /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.core:core-ktx:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/12c72e4917d07e42bd145235e4467917/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/12c72e4917d07e42bd145235e4467917/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
-MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f7b4901aede3b06a18d4615205d6e71/jetified-android-driver-1.4.0/AndroidManifest.xml:5:5-44
-MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f7b4901aede3b06a18d4615205d6e71/jetified-android-driver-1.4.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.material:material:1.3.0-alpha01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/64e151410b975bdf895a1a873f27dc35/material-1.3.0-alpha01/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.3.0-alpha01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/64e151410b975bdf895a1a873f27dc35/material-1.3.0-alpha01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2b7c612c68efaedabcd3840aef459245/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2b7c612c68efaedabcd3840aef459245/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7df098a93aa7b6204015d47c2f29db76/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7df098a93aa7b6204015d47c2f29db76/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/772b43e65fd9cdd49562a69c56824a8f/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/772b43e65fd9cdd49562a69c56824a8f/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c498cc0e40f6766c45703aab8e336a3f/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c498cc0e40f6766c45703aab8e336a3f/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/185ed02d09747ead4f592cc2281d18a6/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/185ed02d09747ead4f592cc2281d18a6/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/5c7ca5a19c6ce30f0251eae5b0a3ff5f/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/5c7ca5a19c6ce30f0251eae5b0a3ff5f/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9587f9f46fa7188879d5ae96a561bc5/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9587f9f46fa7188879d5ae96a561bc5/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a4f031a03acc4b6f811c0a4a91be49ea/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a4f031a03acc4b6f811c0a4a91be49ea/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/82f3939e69ff6dafda58803a0427d317/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/82f3939e69ff6dafda58803a0427d317/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/dac1dbf945c8f32a4aee8308d860285f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/dac1dbf945c8f32a4aee8308d860285f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9f0e47eebf7898e7801427b02f13eefe/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9f0e47eebf7898e7801427b02f13eefe/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b1270244028f48246b48a88ee2b0de7f/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b1270244028f48246b48a88ee2b0de7f/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3b946db2288ee7997c9d8ba29571615c/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3b946db2288ee7997c9d8ba29571615c/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c477ef94513275da8b2045ccccc42e30/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c477ef94513275da8b2045ccccc42e30/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/afce4e51942d15c240cb87046a1fcaea/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/afce4e51942d15c240cb87046a1fcaea/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2aa0a2ee8a6dcdd35e327cf743e130a2/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/2aa0a2ee8a6dcdd35e327cf743e130a2/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/18e9147ffb8adbc7cbfcaa2b9cc1520c/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/18e9147ffb8adbc7cbfcaa2b9cc1520c/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4d72874c021a8c5d194cfb81255c7aae/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4d72874c021a8c5d194cfb81255c7aae/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee7b8fe5eb9bf940f58123fd6ecaf720/core-1.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3aea8a31665cfbcefcea5cfb194c6204/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3aea8a31665cfbcefcea5cfb194c6204/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0da606dba75aa3055163300ffcf0663/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0da606dba75aa3055163300ffcf0663/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/fea53a008ca77c6e7ab27014e86925ff/jetified-library-1.0.1/AndroidManifest.xml:7:5-9:41
-MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/fea53a008ca77c6e7ab27014e86925ff/jetified-library-1.0.1/AndroidManifest.xml:7:5-9:41
-MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/bf25e78d6e7c496f89b36d1a446f8398/jetified-armadillo-0.9.0/AndroidManifest.xml:7:5-9:41
-MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/bf25e78d6e7c496f89b36d1a446f8398/jetified-armadillo-0.9.0/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e7757e215e5b4da7b59c0f65f0ae1112/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e7757e215e5b4da7b59c0f65f0ae1112/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/811e8283590ad4b0cd2b5046c4c74f00/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/811e8283590ad4b0cd2b5046c4c74f00/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f71042e0b96e793cf7eeb0f398c6a869/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f71042e0b96e793cf7eeb0f398c6a869/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e32f2845c270707c50dc2f2ea933589a/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e32f2845c270707c50dc2f2ea933589a/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e20738019ec98f500c0958b330c20a4d/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e20738019ec98f500c0958b330c20a4d/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/387b49d55aa124882e2cd219f348ca1f/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/387b49d55aa124882e2cd219f348ca1f/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1553bb79ba425b739920d4e5ea3e7214/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1553bb79ba425b739920d4e5ea3e7214/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/79ca2f613d7fbe54de5d37462af7f8fe/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/79ca2f613d7fbe54de5d37462af7f8fe/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f0f8addf3c21f52080505331c6e2114/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1f0f8addf3c21f52080505331c6e2114/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/222e1a032e9fbfe44b34ec1b44253fe5/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/222e1a032e9fbfe44b34ec1b44253fe5/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7d1b026927e175086c2760a3f9a4c315/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7d1b026927e175086c2760a3f9a4c315/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e8f4a8b30d31971d96fcaa641681be5/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e8f4a8b30d31971d96fcaa641681be5/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6ad58be18349e0dad8119d7f71816cf5/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6ad58be18349e0dad8119d7f71816cf5/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/477ed46e96f9866987d128ed1745a811/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/477ed46e96f9866987d128ed1745a811/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f8d9ae89971e17b05dabae4100543c00/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f8d9ae89971e17b05dabae4100543c00/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7454bbbc7799ee6dc11242836778dd32/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7454bbbc7799ee6dc11242836778dd32/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee43ee57c3c3ac7dbca8bb7e98acb629/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/ee43ee57c3c3ac7dbca8bb7e98acb629/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1c1185f8d561b3d641092614c1346a71/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1c1185f8d561b3d641092614c1346a71/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cf8d25af7beadb63e644f5dc1f2b6846/jetified-android-driver-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.sqldelight:android-driver:1.4.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cf8d25af7beadb63e644f5dc1f2b6846/jetified-android-driver-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.3.0-rc01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1a9e4a04dbd148d28e1a0e2a27974d0d/material-1.3.0-rc01/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0-rc01] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1a9e4a04dbd148d28e1a0e2a27974d0d/material-1.3.0-rc01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/960dd4c8119c30a31e84463426297f1d/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/960dd4c8119c30a31e84463426297f1d/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b905a19050242c3ad2dc3861778cff53/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/b905a19050242c3ad2dc3861778cff53/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e7313a4aec5e4742c0e645ef860c149/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7e7313a4aec5e4742c0e645ef860c149/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a0811490bb7ff2b25446c8c33dd262ff/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a0811490bb7ff2b25446c8c33dd262ff/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1ae79c4e34bbf6d756774020bcac2fd3/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1ae79c4e34bbf6d756774020bcac2fd3/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/53d8cee3dea8455ed8547e25f21312c8/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/53d8cee3dea8455ed8547e25f21312c8/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3015b5c48d0d4d837380dc240c63aefc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3015b5c48d0d4d837380dc240c63aefc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/51ded4a86691ff1d39bf7b2a8c0f5127/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/51ded4a86691ff1d39bf7b2a8c0f5127/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3ccd02a969b2a153596ccde49aa18522/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/3ccd02a969b2a153596ccde49aa18522/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8846af12a7b7da881b5e99ed0682c6fe/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8846af12a7b7da881b5e99ed0682c6fe/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/d750c4b0f55d6b90d7d8eb815c09605c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/d750c4b0f55d6b90d7d8eb815c09605c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/69be56fa15e08ce4d102388addc48ece/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/69be56fa15e08ce4d102388addc48ece/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a3bee26b4f7f349afbe0c5e5fdcfb336/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a3bee26b4f7f349afbe0c5e5fdcfb336/fragment-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cbb3a23956e889e01839844b0fe6a0df/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/cbb3a23956e889e01839844b0fe6a0df/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/839e299b5e776c98614a8c71897fcb3c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/839e299b5e776c98614a8c71897fcb3c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4ad851b1e580e3a5cd86a0e765e7a2b1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4ad851b1e580e3a5cd86a0e765e7a2b1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7da989053c2edccb32cff1487b72600c/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/7da989053c2edccb32cff1487b72600c/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/01749dddef9e842490cae82d0d08b7c7/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/01749dddef9e842490cae82d0d08b7c7/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/61d7c1c79894dbd269d21105d28c5979/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/765eccdc62488fe18a5f1d2160d5f3ca/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/765eccdc62488fe18a5f1d2160d5f3ca/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e3fb91c56bb3b3d4c9c9e437e85b81fb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e3fb91c56bb3b3d4c9c9e437e85b81fb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1b9dce5d4d8417fa5b659afc941d4f03/jetified-library-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.skyfishjy.ripplebackground:library:1.0.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/1b9dce5d4d8417fa5b659afc941d4f03/jetified-library-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6b9783f87a2a94b5ee80f969c50c66ed/jetified-armadillo-0.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [at.favre.lib:armadillo:0.9.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/6b9783f87a2a94b5ee80f969c50c66ed/jetified-armadillo-0.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e8e7bc87aa2b1b888a01b7b6e624881d/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e8e7bc87aa2b1b888a01b7b6e624881d/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e79d83debe6fb965fb8b97bdc1eb4440/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e79d83debe6fb965fb8b97bdc1eb4440/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/93f211e8bd47cb38b2626334e0d88194/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/93f211e8bd47cb38b2626334e0d88194/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0f368a97b93d5249a39fefb6ac9b7f3/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e0f368a97b93d5249a39fefb6ac9b7f3/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9704f3f7b23846c3ef1ef194526be36c/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/9704f3f7b23846c3ef1ef194526be36c/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9202160f884f55c2ed516be6a5220bc/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e9202160f884f55c2ed516be6a5220bc/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/efee5740b49edc14dc523c6bdf7bf58a/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/efee5740b49edc14dc523c6bdf7bf58a/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/098a4f20b4b284eb82666c84d28833e1/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/098a4f20b4b284eb82666c84d28833e1/jetified-lifecycle-viewmodel-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/234064bf8d7b746640288c5b58767c27/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/234064bf8d7b746640288c5b58767c27/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/0b4eacdaa0b17d2fe7fe1b533bb4813a/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/0b4eacdaa0b17d2fe7fe1b533bb4813a/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8ac55f5e45f841c3b1c5b623035a904b/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/8ac55f5e45f841c3b1c5b623035a904b/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f6aeb0f2de965815c622567080b8b852/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/f6aeb0f2de965815c622567080b8b852/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c2bf00ee9dc64f0ddbada6ba51cc8526/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/c2bf00ee9dc64f0ddbada6ba51cc8526/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a54acca510d96927e63d725d9af2eceb/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a54acca510d96927e63d725d9af2eceb/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/88df583b49806e00946b3169ae0cd5c4/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/88df583b49806e00946b3169ae0cd5c4/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a44db29d43cfec32ad7d65489f69212a/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/a44db29d43cfec32ad7d65489f69212a/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/711d3d5c263413b5efaf81d09fb46884/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/711d3d5c263413b5efaf81d09fb46884/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml
 INJECTED from /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -231,12 +231,12 @@ ADDED from [:tangem-sdk] /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-
 	android:name
 		ADDED from [:tangem-sdk] /Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-63
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
 	android:authorities
-		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
 	android:multiprocess
-		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
 	android:exported
-		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/4b89e2bb92babb072aabdbf08183962c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/bamboo/.gradle/caches/transforms-2/files-2.1/e05686a1e4a55ad2bf9044ad4e948df7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79

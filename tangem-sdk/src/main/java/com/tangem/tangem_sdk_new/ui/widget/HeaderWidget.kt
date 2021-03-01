@@ -1,36 +1,48 @@
 package com.tangem.tangem_sdk_new.ui.widget
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.tangem.tangem_sdk_new.R
 import com.tangem.tangem_sdk_new.SessionViewDelegateState
+import com.tangem.tangem_sdk_new.extensions.hide
 import com.tangem.tangem_sdk_new.extensions.hideSoftKeyboard
-import com.tangem.tangem_sdk_new.extensions.setVectorDrawable
 import com.tangem.tangem_sdk_new.extensions.show
+import com.tangem.tangem_sdk_new.ui.animation.VoidCallback
 
 /**
  * Created by Anton Zhilenkov on 09/08/2020.
  */
-class HeaderWidget(mainView: View) : BaseSessionDelegateStateWidget(mainView) {
+class HeaderWidget(
+    mainView: View,
+) : BaseSessionDelegateStateWidget(mainView) {
 
     private val tvCard = mainView.findViewById<TextView>(R.id.tvCard)
     private val tvCardId = mainView.findViewById<TextView>(R.id.tvCardId)
     private val imvClose = mainView.findViewById<ImageView>(R.id.imvClose)
+    private val btnHowTo = mainView.findViewById<Button>(R.id.btnHowTo)
 
-    var onClose: (() -> Unit)? = null
+    var onClose: VoidCallback? = null
+    var onHowTo: VoidCallback? = null
     var isFullScreenMode: Boolean = false
 
     var cardId: String? = null
         private set
 
+    var howToIsEnabled: Boolean = false
+        set(value) {
+            field = value
+            btnHowTo.show(value)
+        }
+
     init {
-        imvClose.setVectorDrawable(R.drawable.ic_close)
         imvClose.setOnClickListener {
             mainView.hideSoftKeyboard()
             mainView.requestFocus()
             onClose?.invoke()
         }
+        btnHowTo.setOnClickListener { onHowTo?.invoke() }
     }
 
     override fun showWidget(show: Boolean, withAnimation: Boolean) {
@@ -41,40 +53,35 @@ class HeaderWidget(mainView: View) : BaseSessionDelegateStateWidget(mainView) {
         when (params) {
             is SessionViewDelegateState.Ready -> {
                 cardId = params.cardId
-                imvClose.show(false)
-                tvCard.show(true)
+                imvClose.hide()
+                showHowToButton(true)
+                tvCard.show()
                 if (cardId == null) {
                     tvCard.text = getString(R.string.view_delegate_header_any_card)
                 } else {
                     tvCard.text = getString(R.string.view_delegate_header_card)
-                    tvCardId.show(true)
-                    tvCardId.text = splitByLength(cardId!!, 4)
+                    tvCardId.show()
+                    tvCardId.text = cardId!!.chunked(4).joinToString(" ")
                 }
             }
             is SessionViewDelegateState.PinChangeRequested -> {
-                imvClose.show(true)
+                showHowToButton(false)
+                imvClose.show()
             }
             is SessionViewDelegateState.PinRequested -> {
+                showHowToButton(false)
                 imvClose.show(isFullScreenMode)
             }
             else -> {
-                imvClose.show(false)
+                imvClose.hide()
+                showHowToButton(true)
             }
         }
     }
 
-    private fun splitByLength(value: String, sizeOfChunk: Int): String {
-        val length = value.length
-        if (length <= sizeOfChunk) return value
+    private fun showHowToButton(show: Boolean) {
+        if (!howToIsEnabled) return
 
-        val countOfFullSizedChunk = length / sizeOfChunk
-        val builder = StringBuilder()
-        var startPosition = 0
-        for (i in 0 until countOfFullSizedChunk) {
-            val endPosition = startPosition + sizeOfChunk
-            builder.append(value.substring(startPosition, endPosition)).append(" ")
-            startPosition = endPosition
-        }
-        return builder.append(value.substring(startPosition, length)).toString().trim()
+        btnHowTo.show(show)
     }
 }

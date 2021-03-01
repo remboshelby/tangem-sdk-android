@@ -11,6 +11,8 @@
     <color name="colorAccent">#027AFF</color>
     <color name="colorPrimary">#027aff</color>
     <color name="colorPrimaryDark">#027AFF</color>
+    <color name="nfc_badge_back">#F8F8FB</color>
+    <color name="nfc_badge_front">#1B1C20</color>
     <color name="progress_bar_color">#0029FF</color>
     <color name="progress_bar_secondary_color">#3BD4D5DC</color>
     <color name="progress_bar_state_error_color">#C4291C</color>
@@ -43,7 +45,8 @@
     <string name="error_cannot_be_depersonalized">This card cannot be depersonalized</string>
     <string name="error_cannot_be_signed">This data cannot be signed</string>
     <string name="error_card_error">Your card is missing essential data</string>
-    <string name="error_card_is_empty">Please create a wallet to sign data</string>
+    <string name="error_card_is_empty" translatable="false">The operation can’t be completed. There is no wallet on the card.</string>
+    <string name="error_card_read_wrong_wallet" translatable="false">Card read wrong wallet</string>
     <string name="error_card_verification_failed">Card verification failed</string>
     <string name="error_data_cannot_be_written">The data cannot be written to the card</string>
     <string name="error_data_size_too_large">Data size exceeds the max limit of 512 bytes</string>
@@ -54,25 +57,37 @@
     <string name="error_missing_counter">The data cannot be written to the card because there is no counter</string>
     <string name="error_missing_issuer_public_key">The issuer public key is missing</string>
     <string name="error_no_remaining_signatures">You cannot sign data with this wallet because the card has reached its signature limit</string>
+    <string name="error_no_space_for_new_wallet" translatable="false">Max number of wallets already created</string>
     <string name="error_not_activated">This card has not been activated</string>
     <string name="error_not_personalized">This card has not been personalized</string>
-    <string name="error_old_firmware">The command requires a card with a different firmware version</string>
+    <string name="error_old_firmware" translatable="false">The command requires a card with a different firmware version</string>
     <string name="error_operation">An error occurred during the operation</string>
-    <string name="error_pin1_cannot_be_changed">PIN1 Access Code cannot be changed</string>
-    <string name="error_pin1_cannot_be_default">PIN1 Access Code cannot be changed to the default value. Please create a new PIN1 Access Code.</string>
+    <string name="error_pin1_cannot_be_changed">Access code cannot be changed</string>
+    <string name="error_pin1_cannot_be_default">Access code cannot be changed to the default value. Please create a new Access code.</string>
     <string name="error_pin1_required">Access code is required</string>
-    <string name="error_pin2_cannot_be_changed">PIN2 Passcode cannot be changed</string>
+    <string name="error_pin2_cannot_be_changed">Passcode cannot be changed</string>
     <string name="error_pin2_required">Passcode is required</string>
     <string name="error_purge_prohibited">This card’s configuration does not allow you to erase the wallet</string>
-    <string name="error_purged">You cannot sign data with this wallet because the card has been purged</string>
     <string name="error_tag_lost">Tag lost.</string>
     <string name="error_user_cancelled">The user cancelled the operation</string>
     <string name="error_verification_failed">Data verification failed</string>
+    <string name="error_wallet_index_exceeds_max_value" translatable="false">Wallet index exceeds max value</string>
+    <string name="error_wallet_not_found" translatable="false">Max number of wallets already created</string>
     <string name="error_wrong_card">Wrong Card</string>
     <string name="error_wrong_card_number">You tapped a different card. Please match the in-app Card ID to the your physical Card ID to continue this process.</string>
     <string name="error_wrong_card_type">This card is configured for a different app. Please see the information on your card and download the related app.</string>
+    <string name="error_wrong_pin1" translatable="false">Wrong access code</string>
+    <string name="error_wrong_pin2" translatable="false">Wrong passcode</string>
     <string name="generic_error_code">An error occurred during the operation. Code: %s</string>
-    <string name="how_to_unknown_detected">Connection was established.. This is the placement of your NFC antenna</string>
+    <string name="how_to_button">How to</string>
+    <string name="how_to_got_it_button">Ok, got it!</string>
+    <string name="how_to_known_antenna_is_here">Your NFC antenna is here</string>
+    <string name="how_to_known_here_how_to_use">Here’s how to use Tangem Cards with (phone)</string>
+    <string name="how_to_known_tap_card_to_the_back">Tap your card to the back of the phone</string>
+    <string name="how_to_known_tap_card_to_the_front">Tap your card to the front of the phone</string>
+    <string name="how_to_nfc_detected">You just found the location of your NFC antenna. Please remember it.</string>
+    <string name="how_to_show_again_button">Show again</string>
+    <string name="how_to_try_other_way_button">Still not working</string>
     <string name="how_to_unknown_empty" translatable="false"/>
     <string name="how_to_unknown_move_card">To detect where your NFC antenna is located, move the card up and down until confirmation.</string>
     <string name="how_to_unknown_nothing_happened">Nothing happened? Try removing your card from the phone and then put it back.</string>

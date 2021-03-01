@@ -12,25 +12,26 @@
         app:layout_constraintBottom_toTopOf="@+id/llButtonsContainer"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imvHandWithCard"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imvHandWithCardH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:translationX="-30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imvPhone"
+        app:layout_constraintEnd_toEndOf="@+id/imvPhone"
+        app:layout_constraintStart_toStartOf="@+id/imvPhone"
+        app:layout_constraintTop_toTopOf="@+id/imvPhone"
         app:srcCompat="@drawable/hand_full_card_horizontal" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imvPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/flBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imvHandWithCard"
+        app:layout_constraintTop_toTopOf="@+id/flBackground"
+        app:layout_constraintVertical_bias="0.39"
         app:srcCompat="@drawable/phone" />
 
 
@@ -63,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnTapIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +72,7 @@
             android:insetBottom="0dp"
             android:text="@string/tap_in_button" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnShowHowToTap"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="match_parent"

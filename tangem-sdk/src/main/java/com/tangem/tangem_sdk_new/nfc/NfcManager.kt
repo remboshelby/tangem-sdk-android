@@ -13,6 +13,7 @@ import android.os.Bundle
 import com.tangem.Log
 import com.tangem.ReadingActiveListener
 import com.tangem.tangem_sdk_new.ui.NfcEnableDialog
+import com.tangem.tangem_sdk_new.ui.animation.VoidCallback
 
 /**
  * Helps use NFC, leveraging Android NFC functionality.
@@ -29,11 +30,20 @@ class NfcManager : NfcAdapter.ReaderCallback, ReadingActiveListener {
             }
             field = value
         }
+    private val onTagDiscoveredListeners: MutableList<VoidCallback> = mutableListOf()
 
     val reader = NfcReader()
     private var activity: Activity? = null
     private var nfcAdapter: NfcAdapter? = null
     private var nfcEnableDialog: NfcEnableDialog? = null
+
+    fun addTagDiscoveredListener(listener: VoidCallback) {
+        onTagDiscoveredListeners.add(listener)
+    }
+
+    fun removeTagDiscoveredListener(listener: VoidCallback) {
+        onTagDiscoveredListeners.remove(listener)
+    }
 
     fun setCurrentActivity(activity: Activity) {
         this.activity = activity
@@ -51,7 +61,8 @@ class NfcManager : NfcAdapter.ReaderCallback, ReadingActiveListener {
     }
 
     override fun onTagDiscovered(tag: Tag?) {
-        Log.i(this::class.simpleName!!, "Nfc tag is discovered")
+        Log.i(this::class.simpleName!!, "NFC tag is discovered")
+        onTagDiscoveredListeners.forEach { it.invoke() }
         if (readingIsActive) reader.onTagDiscovered(tag) else ignoreTag(tag)
     }
 
@@ -69,7 +80,7 @@ class NfcManager : NfcAdapter.ReaderCallback, ReadingActiveListener {
             nfcEnableDialog?.cancel()
         } else {
             nfcEnableDialog = NfcEnableDialog()
-            activity?.let{ nfcEnableDialog?.show(it) }
+            activity?.let { nfcEnableDialog?.show(it) }
         }
     }
 
@@ -94,7 +105,7 @@ class NfcManager : NfcAdapter.ReaderCallback, ReadingActiveListener {
     }
 
     private fun ignoreTag(tag: Tag?) {
-        Log.i(this::class.simpleName!!, "Nfc tag is ignored")
+        Log.i(this::class.simpleName!!, "NFC tag is ignored")
         if (Build.VERSION.SDK_INT >= 24) {
             nfcAdapter?.ignore(tag, 1500, null, null)
         }
@@ -104,9 +115,9 @@ class NfcManager : NfcAdapter.ReaderCallback, ReadingActiveListener {
     companion object {
         // reader mode flags: listen for type A (not B), skipping ndef check
         private const val READER_FLAGS = NfcAdapter.FLAG_READER_NFC_A or
-                NfcAdapter.FLAG_READER_NFC_V or
-                NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK or
-                NfcAdapter.FLAG_READER_NO_PLATFORM_SOUNDS
+            NfcAdapter.FLAG_READER_NFC_V or
+            NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK or
+            NfcAdapter.FLAG_READER_NO_PLATFORM_SOUNDS
     }
 
 }

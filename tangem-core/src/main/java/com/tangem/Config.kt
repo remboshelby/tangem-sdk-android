@@ -44,7 +44,14 @@ class Config(
 
         var savePin1InStaticField: Boolean = true,
 
-        var savePin2InStaticField: Boolean = false
+        var savePin2InStaticField: Boolean = false,
+
+        var howToIsEnabled: Boolean = true,
+
+        /**
+         * Full CID will be displayed if null
+         */
+        var cardIdDisplayedNumbersCount: Int? = null
 
 //        val useCardValuesStorage: Boolean = false
 ) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="repo" module="tangem-demo" revision="unspecified" status="integration" publication="20201019190142"/>
+  <info organisation="repo" module="tangem-demo" revision="unspecified" status="integration" publication="20210211214223"/>
   <configurations>
     <conf name="_internal_aapt2_binary" visibility="private" transitive="false"/>
     <conf name="androidApis" visibility="public"/>
@@ -198,29 +198,31 @@
     <artifact name="tangem-demo-release" type="aab" ext="aab" conf="releaseAabPublication"/>
   </publications>
   <dependencies>
-    <dependency org="com.android.tools.build" name="aapt2" rev="4.1.0-6503028" conf="_internal_aapt2_binary-&gt;default">
+    <dependency org="com.android.tools.build" name="aapt2" rev="4.1.2-6503028" conf="_internal_aapt2_binary-&gt;default">
       <artifact name="aapt2" type="jar" ext="jar" m:classifier="osx" conf="_internal_aapt2_binary"/>
     </dependency>
-    <dependency org="androidx.test.ext" name="junit" rev="1.1.1" conf="androidTestImplementation-&gt;default"/>
-    <dependency org="androidx.test.espresso" name="espresso-core" rev="3.2.0" conf="androidTestImplementation-&gt;default"/>
+    <dependency org="androidx.test.ext" name="junit" rev="1.1.2" conf="androidTestImplementation-&gt;default"/>
+    <dependency org="androidx.test.espresso" name="espresso-core" rev="3.3.0" conf="androidTestImplementation-&gt;default"/>
     <dependency org="repo" name="tangem-demo" rev="unspecified" conf="debugAndroidTestCompileClasspath-&gt;default"/>
     <dependency org="repo" name="tangem-demo" rev="unspecified" conf="debugUnitTestCompileClasspath-&gt;default"/>
     <dependency org="repo" name="tangem-demo" rev="unspecified" conf="debugUnitTestRuntimeClasspath-&gt;default"/>
-    <dependency org="org.jetbrains.kotlin" name="kotlin-android-extensions-runtime" rev="1.4.0" conf="implementation-&gt;default"/>
-    <dependency org="com.tangem" name="tangem-core" rev="1.72.0" conf="implementation-&gt;default"/>
-    <dependency org="com.tangem" name="tangem-sdk" rev="1.72.0" conf="implementation-&gt;default"/>
-    <dependency org="org.jetbrains.kotlin" name="kotlin-stdlib" rev="1.3.72" conf="implementation-&gt;default"/>
-    <dependency org="androidx.core" name="core-ktx" rev="1.3.0" conf="implementation-&gt;default"/>
-    <dependency org="androidx.appcompat" name="appcompat" rev="1.1.0" conf="implementation-&gt;default"/>
-    <dependency org="androidx.constraintlayout" name="constraintlayout" rev="1.1.3" conf="implementation-&gt;default"/>
-    <dependency org="com.google.android.material" name="material" rev="1.3.0-alpha01" conf="implementation-&gt;default"/>
+    <dependency org="org.jetbrains.kotlin" name="kotlin-android-extensions-runtime" rev="1.4.21" conf="implementation-&gt;default"/>
+    <dependency org="com.tangem" name="tangem-core" rev="1.101.0" conf="implementation-&gt;default"/>
+    <dependency org="com.tangem" name="tangem-sdk" rev="1.101.0" conf="implementation-&gt;default"/>
+    <dependency org="org.jetbrains.kotlin" name="kotlin-stdlib" rev="1.4.21" conf="implementation-&gt;default"/>
+    <dependency org="androidx.core" name="core-ktx" rev="1.3.2" conf="implementation-&gt;default"/>
+    <dependency org="androidx.appcompat" name="appcompat" rev="1.2.0" conf="implementation-&gt;default"/>
+    <dependency org="androidx.viewpager2" name="viewpager2" rev="1.0.0" conf="implementation-&gt;default"/>
+    <dependency org="androidx.constraintlayout" name="constraintlayout" rev="2.0.4" conf="implementation-&gt;default"/>
+    <dependency org="com.google.android.material" name="material" rev="1.3.0-rc01" conf="implementation-&gt;default"/>
     <dependency org="com.google.code.gson" name="gson" rev="2.8.6" conf="implementation-&gt;default"/>
-    <dependency org="org.jetbrains.kotlin" name="kotlin-compiler-embeddable" rev="1.4.0" conf="kotlinCompilerClasspath-&gt;default"/>
-    <dependency org="org.jetbrains.kotlin" name="kotlin-android-extensions" rev="1.4.0" conf="kotlinCompilerPluginClasspath-&gt;default"/>
-    <dependency org="org.jetbrains.kotlin" name="kotlin-klib-commonizer-embeddable" rev="1.4.0" conf="kotlinKlibCommonizerClasspath-&gt;default"/>
-    <dependency org="com.android.tools.lint" name="lint-gradle" rev="27.1.0" conf="lintClassPath-&gt;default"/>
+    <dependency org="com.squareup.sqldelight" name="android-driver" rev="1.4.0" conf="implementation-&gt;default"/>
+    <dependency org="org.jetbrains.kotlin" name="kotlin-compiler-embeddable" rev="1.4.21" conf="kotlinCompilerClasspath-&gt;default"/>
+    <dependency org="org.jetbrains.kotlin" name="kotlin-android-extensions" rev="1.4.21" conf="kotlinCompilerPluginClasspath-&gt;default"/>
+    <dependency org="org.jetbrains.kotlin" name="kotlin-klib-commonizer-embeddable" rev="1.4.21" conf="kotlinKlibCommonizerClasspath-&gt;default"/>
+    <dependency org="com.android.tools.lint" name="lint-gradle" rev="27.1.2" conf="lintClassPath-&gt;default"/>
     <dependency org="repo" name="tangem-demo" rev="unspecified" conf="releaseUnitTestCompileClasspath-&gt;default"/>
     <dependency org="repo" name="tangem-demo" rev="unspecified" conf="releaseUnitTestRuntimeClasspath-&gt;default"/>
-    <dependency org="junit" name="junit" rev="4.12" conf="testImplementation-&gt;default"/>
+    <dependency org="junit" name="junit" rev="4.13.1" conf="testImplementation-&gt;default"/>
   </dependencies>
 </ivy-module>

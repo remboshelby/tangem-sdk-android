@@ -1,6 +1,7 @@
 package com.tangem
 
 import com.tangem.commands.*
+import com.tangem.commands.common.card.Card
 import com.tangem.commands.file.*
 import com.tangem.commands.personalization.DepersonalizeCommand
 import com.tangem.commands.personalization.DepersonalizeResponse
@@ -14,6 +15,8 @@ import com.tangem.commands.verifycard.VerifyCardResponse
 import com.tangem.common.CardValuesStorage
 import com.tangem.common.CompletionResult
 import com.tangem.common.TerminalKeysService
+import com.tangem.common.files.FileHashData
+import com.tangem.common.files.FileHashHelper
 import com.tangem.crypto.CryptoUtils
 import com.tangem.tasks.CreateWalletTask
 import com.tangem.tasks.ScanTask
@@ -55,13 +58,16 @@ class TangemSdk(
      * it obtains the card data. Optionally, if the card contains a wallet (private and public key pair),
      * it proves that the wallet owns a private key that corresponds to a public one.
      *
+     * Note: `WalletIndex` available for cards with COS v.4.0 or higher.
+     * @param walletIndex: Pointer to wallet which data should be read.
+     * if not specified - wallet at default index will be read. See `WalletIndex` for more info.
      * @param initialMessage: A custom description that shows at the beginning of the NFC session.
      * If null, default message will be used.
      * * @param callback is triggered on the completion of the [ScanTask] and provides card response
      * in the form of [Card] if the task was performed successfully or [TangemSdkError] in case of an error.
      */
-    fun scanCard(initialMessage: Message? = null, callback: (result: CompletionResult<Card>) -> Unit) {
-        startSessionWithRunnable(ScanTask(), null, initialMessage, callback)
+    fun scanCard(walletIndex: WalletIndex? = null, initialMessage: Message? = null, callback: (result: CompletionResult<Card>) -> Unit) {
+        startSessionWithRunnable(ScanTask(walletIndex), null, initialMessage, callback)
     }
 
     /**
@@ -76,7 +82,10 @@ class TangemSdk(
      * that may last up to 45 seconds, depending on a card.
      * It is for [SessionViewDelegate] to notify users of security delay.
      *
+     * Note: `WalletIndex` available for cards with COS v.4.0 or higher.
      * @param hashes Array of transaction hashes. It can be from one or up to ten hashes of the same length.
+     * @param walletIndex: Pointer to wallet that should sign hashes.
+     * If not specified - wallet at default index will sign hashes. See `WalletIndex` for more info.
      * @param cardId CID, Unique Tangem card ID number
      * @param initialMessage: A custom description that shows at the beginning of the NFC session.
      * If null, default message will be used.
@@ -84,9 +93,9 @@ class TangemSdk(
      * in the form of [SignResponse] if the task was performed successfully
      * or [TangemSdkError] in case of an error.
      */
-    fun sign(hashes: Array<ByteArray>, cardId: String? = null, initialMessage: Message? = null,
-             callback: (result: CompletionResult<SignResponse>) -> Unit) {
-        startSessionWithRunnable(SignCommand(hashes), cardId, initialMessage, callback)
+    fun sign(hashes: Array<ByteArray>, walletIndex: WalletIndex? = null, cardId: String? = null,
+             initialMessage: Message? = null, callback: (result: CompletionResult<SignResponse>) -> Unit) {
+        startSessionWithRunnable(SignCommand(hashes, walletIndex), cardId, initialMessage, callback)
     }
 
     /**
@@ -306,6 +315,21 @@ class TangemSdk(
     }
 
     /**
+     * Creates hashes and signatures for [com.tangem.commands.file.FileData.DataProtectedBySignature]
+     * @param cardId: CID, Unique Tangem card ID number.
+     * @param fileData: File data that will be written on card
+     * @param fileCounter: A counter that protects issuer data against replay attack.
+     * @param privateKey: Optional private key that will be used for signing files hashes.
+     * If it is provided, then [FileHashData] will contain signed file signatures.
+     * @return [FileHashData] with hashes to sign and signatures if [privateKey] was provided.
+     */
+    fun prepareHashes(
+            cardId: String, fileData: ByteArray, fileCounter: Int, privateKey: ByteArray? = null
+    ): FileHashData {
+        return FileHashHelper.prepareHashes(cardId, fileData, fileCounter, privateKey)
+    }
+
+    /**
      * This method launches a [ReadUserDataCommand] on a new thread.
      *
      * This command returns two up to 512-byte User_Data, User_Protected_Data and two counters User_Counter and
@@ -417,6 +441,12 @@ class TangemSdk(
      * WalletPrivateKey is never revealed by the card and will be used by [SignCommand] and [CheckWalletCommand].
      * RemainingSignature is set to MaxSignatures.
      *
+     * Note: 'WalletConfig' and 'WalletIndex' available for cards with COS v.4.0 and higher. For earlier
+     * versions it will be ignored.
+     * @param config: Configuration for wallet that should be created (blockchain name, token...).
+     * This parameter available for cards with COS v.4.0 and higher. For earlier versions it will be ignored
+     * @param walletIndex: Index at which wallet should be created, if not specified - wallet will be created at default index.
+     * This parameter available for cards with COS v.4.0 and higher. For earlier versions it will be ignored
      * @param cardId CID, Unique Tangem card ID number.
      * @param initialMessage: A custom description that shows at the beginning of the NFC session.
      * If null, default message will be used.
@@ -424,9 +454,10 @@ class TangemSdk(
      * card response in the form of [CreateWalletResponse] if the task was performed successfully
      * or [TangemSdkError] in case of an error.
      */
-    fun createWallet(cardId: String? = null, initialMessage: Message? = null,
+    fun createWallet(config: WalletConfig? = null, walletIndex: Int? = null,
+                     cardId: String? = null, initialMessage: Message? = null,
                      callback: (result: CompletionResult<CreateWalletResponse>) -> Unit) {
-        startSessionWithRunnable(CreateWalletTask(), cardId, initialMessage, callback)
+        startSessionWithRunnable(CreateWalletTask(config, walletIndex), cardId, initialMessage, callback)
     }
 
     /**
@@ -438,6 +469,9 @@ class TangemSdk(
      * If IsReusable flag is disabled, the card switches to ‘Purged’ state.
      * ‘Purged’ state is final, it makes the card useless.
      *
+     * Note: 'WalletIndex' available for cards with COS v.4.0 or higher
+     * @param walletIndex: Pointer to wallet that should be purged.
+     * If not specified - wallet at default index will be purged. See `WalletIndex` for more info
      * @param cardId CID, Unique Tangem card ID number.
      * @param initialMessage: A custom description that shows at the beginning of the NFC session.
      * If null, default message will be used.
@@ -445,9 +479,9 @@ class TangemSdk(
      * card response in the form of [PurgeWalletResponse] if the task was performed successfully
      * or [TangemSdkError] in case of an error.
      */
-    fun purgeWallet(cardId: String? = null, initialMessage: Message? = null,
+    fun purgeWallet(walletIndex: WalletIndex?, cardId: String? = null, initialMessage: Message? = null,
                     callback: (result: CompletionResult<PurgeWalletResponse>) -> Unit) {
-        startSessionWithRunnable(PurgeWalletCommand(), cardId, initialMessage, callback)
+        startSessionWithRunnable(PurgeWalletCommand(walletIndex), cardId, initialMessage, callback)
     }
 
     /**
@@ -587,6 +621,7 @@ class TangemSdk(
     fun <T : CommandResponse> startSessionWithRunnable(
             runnable: CardSessionRunnable<T>, cardId: String? = null, initialMessage: Message? = null,
             callback: (result: CompletionResult<T>) -> Unit) {
+        viewDelegate.setConfig(config)
         val cardSession = CardSession(environmentService, reader, viewDelegate, cardId, initialMessage)
         Thread().run { cardSession.startWithRunnable(runnable, callback) }
     }
@@ -605,6 +640,7 @@ class TangemSdk(
      */
     fun startSession(cardId: String? = null, initialMessage: Message? = null,
                      callback: (session: CardSession, error: TangemError?) -> Unit) {
+        viewDelegate.setConfig(config)
         val cardSession = CardSession(environmentService, reader, viewDelegate, cardId, initialMessage)
         Thread().run { cardSession.start(callback = callback) }
     }

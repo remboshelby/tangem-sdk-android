@@ -40,12 +40,12 @@
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_activity_demo.xml.flat",
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/activity_demo.xml"
+    },
+    {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_wallet.xml.flat",
@@ -62,6 +62,14 @@
     {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_item_console_message_rv.xml.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/item_console_message_rv.xml"
+    },
+    {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_item_command_drop_down_spinner.xml.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/item_command_drop_down_spinner.xml"
     },
     {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -84,6 +92,10 @@
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/issuer_data.xml"
     },
     {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_fg_commands_tester.xml.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/fg_commands_tester.xml"
+    },
+    {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
@@ -98,5 +110,13 @@
     {
         "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/drawable_horizontal_shadow_inverse.xml.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/drawable/horizontal_shadow_inverse.xml"
+    },
+    {
+        "merged": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/build/intermediates/res/merged/debug/layout_fg_command_list.xml.flat",
+        "source": "/Users/bamboo/CI/bamboo-home/xml-data/build-dir/AM-BCS-JOB1/repo/tangem-demo/src/main/res/layout/fg_command_list.xml"
     }
 ]

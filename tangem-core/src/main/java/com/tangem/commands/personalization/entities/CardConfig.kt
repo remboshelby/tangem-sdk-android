@@ -1,8 +1,8 @@
 package com.tangem.commands.personalization.entities
 
-import com.tangem.commands.CardData
-import com.tangem.commands.EllipticCurve
-import com.tangem.commands.SigningMethodMask
+import com.tangem.commands.common.card.CardData
+import com.tangem.commands.common.card.EllipticCurve
+import com.tangem.commands.common.card.masks.SigningMethodMask
 import com.tangem.common.extensions.calculateSha256
 
 data class NdefRecord(
@@ -63,6 +63,7 @@ class CardConfig(
         val checkPIN3OnCard: Boolean,
 
         val createWallet: Boolean,
+        val walletsCount: Int,
 
         val cardData: CardData,
         val ndefRecords: List<NdefRecord>

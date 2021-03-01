@@ -2,8 +2,13 @@ package com.tangem.common.tlv
 
 import com.tangem.Log
 import com.tangem.TangemSdkError
-import com.tangem.commands.*
 import com.tangem.commands.common.IssuerDataMode
+import com.tangem.commands.common.card.CardStatus
+import com.tangem.commands.common.card.EllipticCurve
+import com.tangem.commands.common.card.masks.ProductMask
+import com.tangem.commands.common.card.masks.SettingsMask
+import com.tangem.commands.common.card.masks.SigningMethodMask
+import com.tangem.commands.common.card.masks.WalletSettingsMask
 import com.tangem.commands.file.FileDataMode
 import com.tangem.commands.file.FileSettings
 import com.tangem.common.extensions.calculateSha256
@@ -25,8 +30,9 @@ class TlvEncoder {
         if (value != null) {
             return Tlv(tag, encodeValue(tag, value))
         } else {
-            Log.e(this::class.simpleName!!, "Encoding error. Value for tag $tag is null")
-            throw TangemSdkError.EncodingFailed()
+            val error = TangemSdkError.EncodingFailed("Encoding error. Value for tag $tag is null")
+            Log.e(this::class.simpleName!!, error.customMessage)
+            throw error
         }
     }
 
@@ -79,14 +85,20 @@ class TlvEncoder {
             }
             TlvValueType.ProductMask -> {
                 typeCheck<T, ProductMask>(tag)
-                byteArrayOf(
-                        (value as ProductMask).rawValue.toByte()
-                )
+                byteArrayOf((value as ProductMask).rawValue.toByte())
             }
             TlvValueType.SettingsMask -> {
-                typeCheck<T, SettingsMask>(tag)
-                val rawValue = (value as SettingsMask).rawValue
-                rawValue.toByteArray(determineByteArraySize(rawValue))
+                try {
+                    typeCheck<T, SettingsMask>(tag)
+                    val rawValue = (value as SettingsMask).rawValue
+                    rawValue.toByteArray(determineByteArraySize(rawValue))
+                } catch (ex: TangemSdkError.EncodingFailedTypeMismatch) {
+                    Log.i(this::class.simpleName!!,
+                        "Settings mask type is not Card settings mask. Trying to check WalletSettingsMask")
+                    typeCheck<T, WalletSettingsMask>(tag)
+                    val rawValue = (value as WalletSettingsMask).rawValue
+                    rawValue.toByteArray(determineByteArraySize(rawValue))
+                }
             }
             TlvValueType.CardStatus -> {
                 typeCheck<T, CardStatus>(tag)
@@ -118,9 +130,11 @@ class TlvEncoder {
 
     inline fun <reified T, reified ExpectedT> typeCheck(tag: TlvTag) {
         if (T::class != ExpectedT::class) {
-            Log.e(this::class.simpleName!!,
-                    "Mapping error. Type for tag: $tag must be ${tag.valueType()}. It is ${T::class}")
-            throw TangemSdkError.EncodingFailedTypeMismatch()
+            val error = TangemSdkError.EncodingFailedTypeMismatch(
+                    "Mapping error. Type for tag: $tag must be ${tag.valueType()}. It is ${T::class}"
+            )
+            Log.e(this::class.simpleName!!, error.customMessage)
+            throw error
         }
     }
 }

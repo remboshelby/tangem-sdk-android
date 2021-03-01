@@ -1,13 +1,16 @@
 package com.tangem.tangem_sdk_new.ui.widget
 
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.tangem.TangemSdkError
 import com.tangem.commands.PinType
 import com.tangem.tangem_sdk_new.R
 import com.tangem.tangem_sdk_new.SessionViewDelegateState
 import com.tangem.tangem_sdk_new.extensions.hideSoftKeyboard
+import com.tangem.tangem_sdk_new.extensions.localizedDescription
 import com.tangem.tangem_sdk_new.extensions.showSoftKeyboard
 import com.tangem.tangem_sdk_new.postUI
 
@@ -23,6 +26,18 @@ class PinCodeRequestWidget(mainView: View) : BaseSessionDelegateStateWidget(main
     private val btnContinue = mainView.findViewById<Button>(R.id.btnContinue)
     private val expandingView = mainView.findViewById<View>(R.id.expandingView)
 
+    init {
+        etPinCode.isSingleLine = true
+        etPinCode.imeOptions = EditorInfo.IME_ACTION_DONE
+        etPinCode.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                btnContinue.performClick()
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
+    }
+
     fun canExpand(): Boolean = expandingView != null
 
     override fun setState(params: SessionViewDelegateState) {
@@ -33,6 +48,11 @@ class PinCodeRequestWidget(mainView: View) : BaseSessionDelegateStateWidget(main
                     PinType.Pin2 -> getString(R.string.pin2)
                 }
                 tilPinCode.hint = code
+                val error = when (params.pinType) {
+                    PinType.Pin1 -> TangemSdkError.WrongPin1().localizedDescription(mainView.context)
+                    PinType.Pin2 -> TangemSdkError.WrongPin1().localizedDescription(mainView.context)
+                }
+                if (!params.isFirstAttempt) tilPinCode.error = error
                 etPinCode.setText("")
                 postUI(1000) { etPinCode.showSoftKeyboard() }
                 btnContinue.setOnClickListener {

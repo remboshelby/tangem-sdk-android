@@ -7,7 +7,7 @@ import java.lang.System;
  *
  * Its default implementation, DefaultCardManagerDelegate, is in our tangem-sdk module.
  */
-@kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J \u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H&J\u0010\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH&J3\u0010\f\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2!\u0010\u000f\u001a\u001d\u0012\u0013\u0012\u00110\u0011\u00a2\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0004\u0012\u00020\u00030\u0010H&J3\u0010\u0015\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2!\u0010\u000f\u001a\u001d\u0012\u0013\u0012\u00110\u0011\u00a2\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0004\u0012\u00020\u00030\u0010H&J\u0018\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u0006H&J\u001e\u0010\u0019\u001a\u00020\u00032\b\u0010\u001a\u001a\u0004\u0018\u00010\u00112\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u001cH&J\u0014\u0010\u001d\u001a\u00020\u00032\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u001cH&J\b\u0010\u001e\u001a\u00020\u0003H&J\b\u0010\u001f\u001a\u00020\u0003H&J\u0010\u0010 \u001a\u00020\u00032\u0006\u0010!\u001a\u00020\"H&\u00a8\u0006#"}, d2 = {"Lcom/tangem/SessionViewDelegate;", "", "dismiss", "", "onDelay", "total", "", "current", "step", "onError", "error", "Lcom/tangem/TangemError;", "onPinChangeRequested", "pinType", "Lcom/tangem/commands/PinType;", "callback", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "pin", "onPinRequested", "onSecurityDelay", "ms", "totalDurationSeconds", "onSessionStarted", "cardId", "message", "Lcom/tangem/Message;", "onSessionStopped", "onTagConnected", "onTagLost", "onWrongCard", "wrongValueType", "Lcom/tangem/WrongValueType;", "tangem-core"})
+@kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J \u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H&J\u0010\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH&J3\u0010\f\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2!\u0010\u000f\u001a\u001d\u0012\u0013\u0012\u00110\u0011\u00a2\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0004\u0012\u00020\u00030\u0010H&J;\u0010\u0015\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u00172!\u0010\u000f\u001a\u001d\u0012\u0013\u0012\u00110\u0011\u00a2\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0004\u0012\u00020\u00030\u0010H&J\u0018\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u001a\u001a\u00020\u0006H&J&\u0010\u001b\u001a\u00020\u00032\b\u0010\u001c\u001a\u0004\u0018\u00010\u00112\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020\u0017H&J\u0014\u0010 \u001a\u00020\u00032\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u001eH&J\b\u0010!\u001a\u00020\u0003H&J\b\u0010\"\u001a\u00020\u0003H&J\u0010\u0010#\u001a\u00020\u00032\u0006\u0010$\u001a\u00020%H&J\u0010\u0010&\u001a\u00020\u00032\u0006\u0010\'\u001a\u00020(H&J\u0012\u0010)\u001a\u00020\u00032\b\u0010\u001d\u001a\u0004\u0018\u00010\u001eH&\u00a8\u0006*"}, d2 = {"Lcom/tangem/SessionViewDelegate;", "", "dismiss", "", "onDelay", "total", "", "current", "step", "onError", "error", "Lcom/tangem/TangemError;", "onPinChangeRequested", "pinType", "Lcom/tangem/commands/PinType;", "callback", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "pin", "onPinRequested", "isFirstAttempt", "", "onSecurityDelay", "ms", "totalDurationSeconds", "onSessionStarted", "cardId", "message", "Lcom/tangem/Message;", "enableHowTo", "onSessionStopped", "onTagConnected", "onTagLost", "onWrongCard", "wrongValueType", "Lcom/tangem/WrongValueType;", "setConfig", "config", "Lcom/tangem/Config;", "setMessage", "tangem-core"})
 public abstract interface SessionViewDelegate {
     
     /**
@@ -15,7 +15,7 @@ public abstract interface SessionViewDelegate {
      */
     public abstract void onSessionStarted(@org.jetbrains.annotations.Nullable()
     java.lang.String cardId, @org.jetbrains.annotations.Nullable()
-    com.tangem.Message message);
+    com.tangem.Message message, boolean enableHowTo);
     
     /**
      * It is called when security delay is triggered by the card.
@@ -56,7 +56,7 @@ public abstract interface SessionViewDelegate {
      * It is called when a user is expected to enter pin code.
      */
     public abstract void onPinRequested(@org.jetbrains.annotations.NotNull()
-    com.tangem.commands.PinType pinType, @org.jetbrains.annotations.NotNull()
+    com.tangem.commands.PinType pinType, boolean isFirstAttempt, @org.jetbrains.annotations.NotNull()
     kotlin.jvm.functions.Function1<? super java.lang.String, kotlin.Unit> callback);
     
     /**
@@ -66,6 +66,12 @@ public abstract interface SessionViewDelegate {
     com.tangem.commands.PinType pinType, @org.jetbrains.annotations.NotNull()
     kotlin.jvm.functions.Function1<? super java.lang.String, kotlin.Unit> callback);
     
+    public abstract void setConfig(@org.jetbrains.annotations.NotNull()
+    com.tangem.Config config);
+    
+    public abstract void setMessage(@org.jetbrains.annotations.Nullable()
+    com.tangem.Message message);
+    
     public abstract void dismiss();
     
     /**
@@ -73,7 +79,7 @@ public abstract interface SessionViewDelegate {
      *
      * Its default implementation, DefaultCardManagerDelegate, is in our tangem-sdk module.
      */
-    @kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 3)
+    @kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 3)
     public final class DefaultImpls {
     }
 }

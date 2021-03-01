@@ -15,7 +15,8 @@ import com.tangem.tangem_sdk_new.nfc.NfcManager
 fun TangemSdk.Companion.init(activity: ComponentActivity, config: Config = Config()): TangemSdk {
     val nfcManager = TangemSdk.initNfcManager(activity)
 
-    val viewDelegate = DefaultSessionViewDelegate(nfcManager.reader)
+    val viewDelegate = DefaultSessionViewDelegate(nfcManager, nfcManager.reader)
+    viewDelegate.sdkConfig = config
     viewDelegate.activity = activity
 
     val databaseDriver = AndroidSqliteDriver(Database.Schema, activity.applicationContext, "cards.db")
@@ -33,10 +34,14 @@ fun TangemSdk.Companion.customInit(
     val nfcManager = TangemSdk.initNfcManager(activity)
     val databaseDriver = AndroidSqliteDriver(Database.Schema, activity.applicationContext, "cards.db")
 
+    val viewDelegate = viewDelegate ?: DefaultSessionViewDelegate(nfcManager, nfcManager.reader).apply {
+        this.sdkConfig = config
+        this.activity = activity
+    }
+
     return TangemSdk(
             nfcManager.reader,
-            viewDelegate ?: DefaultSessionViewDelegate(nfcManager.reader)
-                    .apply { this.activity = activity },
+            viewDelegate,
             config,
             CardValuesDbStorage(databaseDriver), TerminalKeysStorage(activity.application)
     )
