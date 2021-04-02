@@ -49,7 +49,7 @@ fun StatusWord.toTangemSdkError(): TangemSdkError? {
         StatusWord.NeedEncryption -> TangemSdkError.NeedEncryption()
         StatusWord.FileNotFound -> TangemSdkError.FileNotFound()
         StatusWord.WalletNotFound -> TangemSdkError.WalletNotFound()
-        StatusWord.Unknown -> TangemSdkError.UnknownStatus()
+        else -> null
     }
 }
 
