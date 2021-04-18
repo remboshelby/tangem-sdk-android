@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  
 
 env:
-  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DVELOPMENT_IOS }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DVELOPMENT_ANDROID }}
 
 jobs:
   tag:
@@ -40,7 +40,7 @@ jobs:
       if: always()
       uses: adamkdean/simple-slack-notify@master
       with:
-        channel: '#development-ios'
+        channel: '#development-android'
         status: ${{ job.status }}
         success_text: 'Neutral build #${{ github.run_number }} completed successfully. Tag has been created.'
         failure_text: 'GitHub Action #${{ github.run_number }} failed. Tag has not been not created.'
