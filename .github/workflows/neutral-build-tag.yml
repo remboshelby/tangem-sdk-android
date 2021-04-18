@@ -3,6 +3,7 @@ name: Neutral Build Tag
 on:
   push:
     branches: [ develop ]
+  workflow_dispatch:  
 
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DVELOPMENT_IOS }}
@@ -10,7 +11,7 @@ env:
 jobs:
   tag:
     name: Create tag
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Extract branch name
       shell: bash
@@ -28,6 +29,8 @@ jobs:
             ref: "refs/tags/${{ steps.extract_branch.outputs.branch }}-${{ github.run_number }}",
             sha: context.sha
           })
+    - name: Build and publish
+      run: ./gradlew -PnexusUser=${{ secrets.NEXUS_USERNAME }} -PnexusPass=${{ secrets.NEXUS_PASSWORD }} -PartifactGroup=com.tangem -PartifactVersion=${{ steps.extract_branch.outputs.branch }}-${{ github.run_number }} uploadArchives
     - name: Build notification
       if: always()
       uses: adamkdean/simple-slack-notify@master
