@@ -34,7 +34,9 @@ jobs:
           })
           
     - name: Build and publish
-      run: ./gradlew -PnexusUser=${{ secrets.NEXUS_USERNAME }} -PnexusPass=${{ secrets.NEXUS_PASSWORD }} -PartifactGroup=com.tangem -PartifactVersion=${{ steps.extract_branch.outputs.branch }}-${{ github.run_number }} uploadArchives
+      run: |
+        echo "sdk.dir = "$ANDROID_HOME > local.properties
+        ./gradlew -PnexusUser=${{ secrets.NEXUS_USERNAME }} -PnexusPass=${{ secrets.NEXUS_PASSWORD }} -PartifactGroup=com.tangem -PartifactVersion=${{ steps.extract_branch.outputs.branch }}-${{ github.run_number }} uploadArchives
     
     - name: Build notification
       if: always()
