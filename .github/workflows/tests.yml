@@ -21,7 +21,7 @@ jobs:
       run: bundle install
     - name: Tests
       run: |
-        echo "sdk.dir = "$ANDROID_HOME > local.properties
+        echo sdk.dir = $ANDROID_HOME > local.properties
         bundle exec fastlane test
     - name: Build notification
       if: failure()
