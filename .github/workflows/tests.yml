@@ -20,7 +20,9 @@ jobs:
     - name: Bundle Install
       run: bundle install
     - name: Tests
-      run: bundle exec fastlane test
+      run: |
+        echo "sdk.dir = "$ANDROID_HOME > local.properties
+        bundle exec fastlane test
     - name: Build notification
       if: failure()
       uses: adamkdean/simple-slack-notify@master
