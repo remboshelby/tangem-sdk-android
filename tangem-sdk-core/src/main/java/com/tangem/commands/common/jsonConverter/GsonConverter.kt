@@ -13,7 +13,7 @@ import java.util.*
  * Created by Anton Zhilenkov on 31/03/2020.
  */
 @Deprecated(
-    "It's bean deleted later",
+    "This will be removed later",
     ReplaceWith("com.tangem.coommands.common.jsonConverter.MoshiConverter")
 )
 class ResponseConverter {
