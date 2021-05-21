@@ -41,7 +41,8 @@ jobs:
      
     - name: Commit and push changes
       run: |
-       git commit -am "Prepare release version ${{ github.event.inputs.versionName }}"
+       git add .
+       git commit -m "Prepare release version ${{ github.event.inputs.versionName }}"
        git push origin release/${{ github.event.inputs.versionName }}
   
     - uses: actions/github-script@v4
