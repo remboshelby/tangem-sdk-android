@@ -1,5 +1,6 @@
 package com.tangem.commands.file
 
+import com.squareup.moshi.JsonClass
 import com.tangem.*
 import com.tangem.commands.Command
 import com.tangem.commands.CommandResponse
@@ -20,11 +21,13 @@ import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 
+@JsonClass(generateAdapter = true)
 class WriteFileDataResponse(
         val cardId: String,
         val fileIndex: Int? = null
 ) : CommandResponse
 
+@JsonClass(generateAdapter = true)
 class FileDataSignature(
         val startingSignature: ByteArray,
         val finalizingSignature: ByteArray,
@@ -36,6 +39,7 @@ interface FirmwareRestrictible {
 }
 
 sealed class FileData(val data: ByteArray) : FirmwareRestrictible {
+    @JsonClass(generateAdapter = true)
     class DataProtectedBySignature(
             data: ByteArray,
             val counter: Int,
@@ -46,6 +50,7 @@ sealed class FileData(val data: ByteArray) : FirmwareRestrictible {
         override val maxFirmwareVersion: FirmwareVersion = FirmwareVersion.max
     }
 
+    @JsonClass(generateAdapter = true)
     class DataProtectedByPasscode(data: ByteArray) : FileData(data) {
         override val minFirmwareVersion: FirmwareVersion = FirmwareVersion(3, 34)
         override val maxFirmwareVersion: FirmwareVersion = FirmwareVersion.max

@@ -7,6 +7,8 @@ class WalletSettingsMask(var rawValue: Int) {
     override fun toString(): String {
         return WalletSetting.values().filter { it.code == rawValue }.joinToString(", ")
     }
+
+    fun toList(): List<WalletSetting> = WalletSetting.values().filter { contains(it) }.map { it }
 }
 
 enum class WalletSetting(val code: Int) {
