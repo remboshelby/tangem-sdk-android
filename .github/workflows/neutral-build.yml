@@ -24,9 +24,6 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
     
-    - name: test
-      run: echo $JAVA_HOME
-    
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -44,6 +41,11 @@ jobs:
             sha: context.sha
           })
           
+    - name: Prepare updload script
+      run: |
+        rm -rm upload.gradle
+        mv upload_nexus.gradle upload.gradle
+        
     - name: Build and publish
       run: |
         echo sdk.dir = $ANDROID_HOME > local.properties
