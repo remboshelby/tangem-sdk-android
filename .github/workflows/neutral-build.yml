@@ -43,7 +43,7 @@ jobs:
           
     - name: Prepare updload script
       run: |
-        rm -rm upload.gradle
+        rm upload.gradle
         mv upload_nexus.gradle upload.gradle
         
     - name: Build and publish
