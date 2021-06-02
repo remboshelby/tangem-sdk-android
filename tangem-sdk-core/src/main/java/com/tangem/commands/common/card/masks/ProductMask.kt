@@ -12,6 +12,8 @@ data class ProductMask(val rawValue: Int) {
     override fun toString(): String {
         return Product.values().filter { contains(it) }.joinToString(", ")
     }
+
+    fun toList(): List<Product> = Product.values().filter { contains(it) }.map { it }
 }
 
 enum class Product(val code: Int) {

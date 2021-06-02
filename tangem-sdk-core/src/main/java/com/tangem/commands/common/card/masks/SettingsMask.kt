@@ -12,6 +12,8 @@ data class SettingsMask(val rawValue: Int) {
     override fun toString(): String {
         return Settings.values().filter { contains(it) }.joinToString(", ")
     }
+
+    fun toList(): List<Settings> = Settings.values().filter { contains(it) }.map { it }
 }
 
 enum class Settings(val code: Int) {

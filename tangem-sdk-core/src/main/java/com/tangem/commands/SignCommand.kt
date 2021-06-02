@@ -1,5 +1,6 @@
 package com.tangem.commands
 
+import com.squareup.moshi.JsonClass
 import com.tangem.*
 import com.tangem.commands.common.card.Card
 import com.tangem.commands.common.card.CardStatus
@@ -24,6 +25,7 @@ import com.tangem.tasks.PreflightReadSettings
  * @param walletSignedHashes Total number of signed single hashes returned by the card in sign command responses.
  * Sums up array elements within all SIGN commands
  */
+@JsonClass(generateAdapter = true)
 class SignResponse(
     val cardId: String,
     val signatures: List<ByteArray>,
