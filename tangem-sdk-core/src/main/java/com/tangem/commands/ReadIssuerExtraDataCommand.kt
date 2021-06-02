@@ -1,6 +1,5 @@
 package com.tangem.commands
 
-import com.squareup.moshi.JsonClass
 import com.tangem.*
 import com.tangem.commands.common.DefaultIssuerDataVerifier
 import com.tangem.commands.common.IssuerDataMode
@@ -17,7 +16,6 @@ import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 import java.io.ByteArrayOutputStream
 
-@JsonClass(generateAdapter = true)
 class ReadIssuerExtraDataResponse(
 
     /**

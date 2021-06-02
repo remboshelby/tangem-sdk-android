@@ -13,45 +13,36 @@ import com.tangem.commands.wallet.WalletIndex
 import com.tangem.common.CompletionResult
 
 /**
- * Mode for preflight read task
- * Note: Valid for cards with COS v.4 and higher. Older card will always read the card and the wallet info.
- * `FullCardRead` will be used by default
+ * Created by Anton Zhilenkov on 26/03/2021.
  */
-sealed class PreflightReadMode {
+interface PreflightReadCapable {
+    fun needPreflightRead(): Boolean = true
+    fun preflightReadSettings(): PreflightReadSettings = PreflightReadSettings.ReadCardOnly
+}
 
-    /**
-     * No card will be read at session start. `SessionEnvironment.card` will be empty
-     */
-    object None : PreflightReadMode()
+sealed class PreflightReadSettings {
 
-    /**
-     * Read only card info without wallet info. Valid for cards with COS v.4 and higher.
-     * Older card will always read card and wallet info
-     */
-    object ReadCardOnly : PreflightReadMode()
+    object ReadCardOnly : PreflightReadSettings() {
+        override fun toString(): String = this::class.java.simpleName
+    }
 
-    /**
-     * Read card info and single wallet specified in associated index `WalletIndex`.
-     * Valid for cards with COS v.4 and higher. Older card will always read card and wallet info
-     */
-    data class ReadWallet(val walletIndex: WalletIndex) : PreflightReadMode() {
+    data class ReadWallet(val walletIndex: WalletIndex) : PreflightReadSettings() {
         override fun toString(): String = walletIndex.toString()
     }
 
-    /**
-     * Read card info and all wallets. Used by default
-     */
-    object FullCardRead : PreflightReadMode()
-
-    override fun toString(): String = this::class.java.simpleName
+    object FullCardRead : PreflightReadSettings() {
+        override fun toString(): String = this::class.java.simpleName
+    }
 }
 
 class PreflightReadTask(
-    private val readMode: PreflightReadMode
+    private val readSettings: PreflightReadSettings
 ) : CardSessionRunnable<Card> {
 
+    override val requiresPin2: Boolean = false
+
     override fun run(session: CardSession, callback: (result: CompletionResult<Card>) -> Unit) {
-        Log.debug { "================ Perform preflight check with settings: $readMode) ================" }
+        Log.debug { "================ Perform preflight check with settings: $readSettings) ================" }
         ReadCommand().run(session) { result ->
             when (result) {
                 is CompletionResult.Success -> finalizeRead(session, result.data, callback)
@@ -62,7 +53,7 @@ class PreflightReadTask(
 
     private fun finalizeRead(session: CardSession, card: Card, callback: (result: CompletionResult<Card>) -> Unit) {
         if (card.firmwareVersion < FirmwareConstraints.AvailabilityVersions.walletData ||
-            readMode == PreflightReadMode.ReadCardOnly) {
+            readSettings == PreflightReadSettings.ReadCardOnly) {
             callback(CompletionResult.Success(card))
             return
         }
@@ -72,16 +63,16 @@ class PreflightReadTask(
             callback(CompletionResult.Success(session.environment.card!!))
         }
 
-        when (readMode) {
-            is PreflightReadMode.ReadWallet -> {
-                ReadWalletCommand(readMode.walletIndex).run(session) {
+        when (readSettings) {
+            is PreflightReadSettings.ReadWallet -> {
+                ReadWalletCommand(readSettings.walletIndex).run(session) {
                     when (it) {
                         is CompletionResult.Success -> handleSuccess(card, listOf(it.data.wallet), callback)
                         is CompletionResult.Failure -> callback(CompletionResult.Failure(it.error))
                     }
                 }
             }
-            PreflightReadMode.FullCardRead -> {
+            PreflightReadSettings.FullCardRead -> {
                 ReadWalletListCommand().run(session) {
                     when (it) {
                         is CompletionResult.Success -> handleSuccess(card, it.data.wallets, callback)

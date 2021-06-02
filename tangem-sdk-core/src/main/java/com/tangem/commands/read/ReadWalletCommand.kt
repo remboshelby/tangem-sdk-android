@@ -1,6 +1,5 @@
 package com.tangem.commands.read
 
-import com.squareup.moshi.JsonClass
 import com.tangem.Log
 import com.tangem.SessionEnvironment
 import com.tangem.TangemSdkError
@@ -15,12 +14,10 @@ import com.tangem.common.apdu.ResponseApdu
 import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
-import com.tangem.tasks.PreflightReadMode
 
 /**
  * Created by Anton Zhilenkov on 26/03/2021.
  */
-@JsonClass(generateAdapter = true)
 class WalletResponse(
     val cid: String,
     val wallet: CardWallet
@@ -30,7 +27,7 @@ class ReadWalletCommand(
     private val walletIndex: WalletIndex
 ) : Command<WalletResponse>() {
 
-    override fun preflightReadMode(): PreflightReadMode = PreflightReadMode.None
+    override fun needPreflightRead(): Boolean = false
 
     override fun serialize(environment: SessionEnvironment): CommandApdu {
         val tlvBuilder = TlvBuilder()

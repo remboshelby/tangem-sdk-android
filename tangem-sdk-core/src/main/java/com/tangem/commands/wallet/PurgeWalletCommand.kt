@@ -1,8 +1,8 @@
 package com.tangem.commands.wallet
 
-import com.squareup.moshi.JsonClass
 import com.tangem.CardSession
 import com.tangem.SessionEnvironment
+import com.tangem.TangemError
 import com.tangem.TangemSdkError
 import com.tangem.commands.Command
 import com.tangem.commands.CommandResponse
@@ -17,9 +17,8 @@ import com.tangem.common.extensions.guard
 import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
-import com.tangem.tasks.PreflightReadMode
+import com.tangem.tasks.PreflightReadSettings
 
-@JsonClass(generateAdapter = true)
 class PurgeWalletResponse(
     /**
      * CID, Unique Tangem card ID number.
@@ -46,9 +45,9 @@ class PurgeWalletCommand(
     private val walletIndex: WalletIndex
 ) : Command<PurgeWalletResponse>() {
 
-    override fun requiresPin2(): Boolean = true
+    override val requiresPin2 = true
 
-    override fun preflightReadMode(): PreflightReadMode = PreflightReadMode.ReadWallet(walletIndex)
+    override fun preflightReadSettings(): PreflightReadSettings = PreflightReadSettings.ReadWallet(walletIndex)
 
     override fun run(session: CardSession, callback: (result: CompletionResult<PurgeWalletResponse>) -> Unit) {
         super.run(session) { result ->
@@ -97,6 +96,14 @@ class PurgeWalletCommand(
 
         return null
     }
+
+    override fun mapError(card: Card?, error: TangemError): TangemError {
+        if (error is TangemSdkError.InvalidParams) {
+            return TangemSdkError.Pin2OrCvcRequired()
+        }
+        return error
+    }
+
 
     override fun serialize(environment: SessionEnvironment): CommandApdu {
         val tlvBuilder = TlvBuilder()

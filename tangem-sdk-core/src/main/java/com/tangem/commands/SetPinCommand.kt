@@ -1,9 +1,7 @@
 package com.tangem.commands
 
-import com.squareup.moshi.JsonClass
-import com.tangem.CardSession
-import com.tangem.SessionEnvironment
-import com.tangem.TangemSdkError
+import com.tangem.*
+import com.tangem.commands.common.card.Card
 import com.tangem.common.CompletionResult
 import com.tangem.common.apdu.CommandApdu
 import com.tangem.common.apdu.Instruction
@@ -14,7 +12,6 @@ import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 
-@JsonClass(generateAdapter = true)
 class SetPinResponse(
         /**
          * CID, Unique Tangem card ID number.
@@ -28,18 +25,26 @@ class SetPinResponse(
 
 class SetPinCommand(
         private val pinType: PinType,
-        private var newPin1: String? = null,
-        private var newPin2: String? = null
-) : Command<SetPinResponse>() {
+        private var newPin1: ByteArray? = null,
+        private var newPin2: ByteArray? = null
+) : Command<SetPinResponse>(), CardSessionPreparable {
 
-    override fun requiresPin2(): Boolean = true
+    override val requiresPin2 = true
 
     override fun prepare(session: CardSession, callback: (result: CompletionResult<Unit>) -> Unit) {
-        if ((pinType == PinType.Pin1 && newPin1 == null) || (pinType == PinType.Pin2 && newPin2 == null)) {
+        if ((pinType == PinType.Pin1 && newPin1 == null) ||
+                (pinType == PinType.Pin2 && newPin2 == null)) {
             requestNewPin(session, callback)
         } else {
             callback(CompletionResult.Success(Unit))
         }
+    }
+
+    override fun mapError(card: Card?, error: TangemError): TangemError {
+        if (error is TangemSdkError.InvalidParams) {
+            return TangemSdkError.Pin2OrCvcRequired()
+        }
+        return error
     }
 
     override fun run(session: CardSession, callback: (result: CompletionResult<SetPinResponse>) -> Unit) {
@@ -59,9 +64,10 @@ class SetPinCommand(
             session: CardSession, callback: (result: CompletionResult<Unit>) -> Unit
     ) {
         session.viewDelegate.onPinChangeRequested(pinType) { pinString ->
+            val newPin = pinString.calculateSha256()
             when (pinType) {
-                PinType.Pin1 -> newPin1 = pinString
-                PinType.Pin2 -> newPin2 = pinString
+                PinType.Pin1 -> newPin1 = newPin
+                PinType.Pin2 -> newPin2 = newPin
             }
             callback(CompletionResult.Success(Unit))
         }
@@ -73,8 +79,8 @@ class SetPinCommand(
         tlvBuilder.append(TlvTag.CardId, environment.card?.cardId)
         tlvBuilder.append(TlvTag.Pin2, environment.pin2?.value)
         tlvBuilder.append(TlvTag.Cvc, environment.cvc)
-        tlvBuilder.append(TlvTag.NewPin, newPin1?.calculateSha256() ?: environment.pin1?.value)
-        tlvBuilder.append(TlvTag.NewPin2, newPin2?.calculateSha256() ?: environment.pin2?.value)
+        tlvBuilder.append(TlvTag.NewPin, newPin1 ?: environment.pin1?.value)
+        tlvBuilder.append(TlvTag.NewPin2, newPin2 ?: environment.pin2?.value)
         return CommandApdu(Instruction.SetPin, tlvBuilder.serialize())
     }
 
@@ -92,8 +98,8 @@ class SetPinCommand(
     }
 
     companion object {
-        fun setPin1(newPin1: String?): SetPinCommand = SetPinCommand(newPin1 = newPin1, pinType = PinType.Pin1)
-        fun setPin2(newPin2: String?): SetPinCommand = SetPinCommand(newPin2 = newPin2, pinType = PinType.Pin2)
+        fun setPin1(newPin1: ByteArray?): SetPinCommand = SetPinCommand(newPin1 = newPin1, pinType = PinType.Pin1)
+        fun setPin2(newPin2: ByteArray?): SetPinCommand = SetPinCommand(newPin2 = newPin2, pinType = PinType.Pin2)
     }
 }
 

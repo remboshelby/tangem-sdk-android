@@ -1,8 +1,8 @@
 package com.tangem.commands.file
 
-import com.squareup.moshi.JsonClass
 import com.tangem.FirmwareConstraints
 import com.tangem.SessionEnvironment
+import com.tangem.TangemError
 import com.tangem.TangemSdkError
 import com.tangem.commands.Command
 import com.tangem.commands.CommandResponse
@@ -15,27 +15,26 @@ import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 
-@JsonClass(generateAdapter = true)
-class ReadFileChecksumResponse(
-    val cardId: String,
-    val checksum: ByteArray,
-    val fileIndex: Int?
+class ReadFileHashResponse(
+        val cardId: String,
+        val fileHash: ByteArray,
+        val fileIndex: Int?
 ) : CommandResponse
 
 /**
  * This command allows to read a SHA256 hash of a data written to the card
- * with [WriteFileCommand] using PIN2.
+ * with [WriteFileDataCommand] using PIN2.
  * This may be used to check integrity of a file.
  *
  * @property fileIndex index of a file
  * @property readPrivateFiles if set to true, then the command will get hashes of private files.
  */
-class ReadFileChecksumCommand(
+class ReadFileHashCommand(
         private val fileIndex: Int = 0,
         private val readPrivateFiles: Boolean = false
-) : Command<ReadFileChecksumResponse>() {
+) : Command<ReadFileHashResponse>() {
 
-    override fun requiresPin2(): Boolean = readPrivateFiles
+    override val requiresPin2 = readPrivateFiles
 
     override fun performPreCheck(card: Card): TangemSdkError? {
         if (card.status == CardStatus.NotPersonalized) {
@@ -45,6 +44,13 @@ class ReadFileChecksumCommand(
             return TangemSdkError.FirmwareNotSupported()
         }
         return null
+    }
+
+    override fun mapError(card: Card?, error: TangemError): TangemError {
+        if (error is TangemSdkError.InvalidParams && requiresPin2) {
+            return TangemSdkError.Pin2OrCvcRequired()
+        }
+        return error
     }
 
     override fun serialize(environment: SessionEnvironment): CommandApdu {
@@ -60,13 +66,13 @@ class ReadFileChecksumCommand(
     override fun deserialize(
             environment: SessionEnvironment,
             apdu: ResponseApdu
-    ): ReadFileChecksumResponse {
+    ): ReadFileHashResponse {
         val tlvData = apdu.getTlvData() ?: throw TangemSdkError.DeserializeApduFailed()
 
         val decoder = TlvDecoder(tlvData)
-        return ReadFileChecksumResponse(
+        return ReadFileHashResponse(
                 cardId = decoder.decode(TlvTag.CardId),
-                checksum = decoder.decode(TlvTag.CodeHash),
+                fileHash = decoder.decode(TlvTag.CodeHash),
                 fileIndex = decoder.decodeOptional(TlvTag.FileIndex),
         )
     }

@@ -1,6 +1,5 @@
 package com.tangem.commands
 
-import com.squareup.moshi.JsonClass
 import com.tangem.SessionEnvironment
 import com.tangem.TangemSdkError
 import com.tangem.commands.common.card.Card
@@ -12,7 +11,6 @@ import com.tangem.common.tlv.TlvBuilder
 import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 
-@JsonClass(generateAdapter = true)
 class ReadUserDataResponse(
         /**
          * CID, Unique Tangem card ID number.
