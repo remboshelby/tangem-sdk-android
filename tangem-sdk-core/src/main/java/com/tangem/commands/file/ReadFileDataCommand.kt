@@ -1,6 +1,5 @@
 package com.tangem.commands.file
 
-import com.squareup.moshi.JsonClass
 import com.tangem.*
 import com.tangem.commands.Command
 import com.tangem.commands.CommandResponse
@@ -15,8 +14,7 @@ import com.tangem.common.tlv.TlvDecoder
 import com.tangem.common.tlv.TlvTag
 import java.io.ByteArrayOutputStream
 
-@JsonClass(generateAdapter = true)
-class ReadFileResponse(
+class ReadFileDataResponse(
         val cardId: String,
         val size: Int?,
         val fileData: ByteArray,
@@ -27,24 +25,24 @@ class ReadFileResponse(
 ) : CommandResponse
 
 /**
- * This command allows to read data written to the card with [WriteFileCommand].
+ * This command allows to read data written to the card with [WriteFileDataCommand].
  * If the files are private, then Passcode (PIN2) is required to read the files.
  *
  * @property fileIndex index of a file
  * @property readPrivateFiles if set to true, then the command will read private files,
  * for which it requires PIN2. Otherwise only public files can be read.
  */
-class ReadFileCommand(
+class ReadFileDataCommand(
         private val fileIndex: Int = 0,
         private val readPrivateFiles: Boolean = false
-) : Command<ReadFileResponse>() {
+) : Command<ReadFileDataResponse>() {
+
+    override val requiresPin2 = readPrivateFiles
 
     private val fileData = ByteArrayOutputStream()
     private var offset: Int = 0
     private var dataSize: Int = 0
     private var fileSettings: FileSettings? = null
-
-    override fun requiresPin2(): Boolean = readPrivateFiles
 
     override fun performPreCheck(card: Card): TangemSdkError? {
         if (card.status == CardStatus.NotPersonalized) {
@@ -56,18 +54,25 @@ class ReadFileCommand(
         return null
     }
 
+    override fun mapError(card: Card?, error: TangemError): TangemError {
+        if (error is TangemSdkError.InvalidParams && requiresPin2) {
+            return TangemSdkError.Pin2OrCvcRequired()
+        }
+        return error
+    }
+
     override fun run(
             session: CardSession,
-            callback: (result: CompletionResult<ReadFileResponse>) -> Unit
+            callback: (result: CompletionResult<ReadFileDataResponse>) -> Unit
     ) {
         readFileData(session, callback)
     }
 
     private fun readFileData(
-            session: CardSession, callback: (result: CompletionResult<ReadFileResponse>) -> Unit
+            session: CardSession, callback: (result: CompletionResult<ReadFileDataResponse>) -> Unit
     ) {
         if (dataSize != 0) {
-            session.viewDelegate.onDelay(dataSize, offset, WriteFileCommand.SINGLE_WRITE_SIZE)
+            session.viewDelegate.onDelay(dataSize, offset, WriteFileDataCommand.SINGLE_WRITE_SIZE)
         }
 
         transceive(session) { result ->
@@ -97,10 +102,10 @@ class ReadFileCommand(
     }
 
     private fun completeTask(
-        data: ReadFileResponse,
-        callback: (result: CompletionResult<ReadFileResponse>) -> Unit
+            data: ReadFileDataResponse,
+            callback: (result: CompletionResult<ReadFileDataResponse>) -> Unit
     ) {
-        val finalResult = ReadFileResponse(
+        val finalResult = ReadFileDataResponse(
                 data.cardId,
                 dataSize,
                 fileData.toByteArray(),
@@ -125,11 +130,11 @@ class ReadFileCommand(
     override fun deserialize(
             environment: SessionEnvironment,
             apdu: ResponseApdu
-    ): ReadFileResponse {
+    ): ReadFileDataResponse {
         val tlvData = apdu.getTlvData() ?: throw TangemSdkError.DeserializeApduFailed()
 
         val decoder = TlvDecoder(tlvData)
-        return ReadFileResponse(
+        return ReadFileDataResponse(
                 cardId = decoder.decode(TlvTag.CardId),
                 size = decoder.decodeOptional(TlvTag.Size),
                 fileData = decoder.decodeOptional(TlvTag.IssuerData) ?: byteArrayOf(),

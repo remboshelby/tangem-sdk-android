@@ -2,6 +2,7 @@ package com.tangem.commands.file
 
 import com.tangem.FirmwareConstraints
 import com.tangem.SessionEnvironment
+import com.tangem.TangemError
 import com.tangem.TangemSdkError
 import com.tangem.commands.Command
 import com.tangem.commands.SimpleResponse
@@ -18,14 +19,14 @@ import com.tangem.common.tlv.TlvTag
 typealias DeleteFileResponse = SimpleResponse
 
 /**
- * This command allows to delete data written to the card with [WriteFileCommand].
+ * This command allows to delete data written to the card with [WriteFileDataCommand].
  * Passcode (PIN2) is required to delete the files.
  *
  * @property fileIndex index of a file to be deleted.
  */
 class DeleteFileCommand(private val fileIndex: Int) : Command<DeleteFileResponse>() {
 
-    override fun requiresPin2(): Boolean = true
+    override val requiresPin2 = true
 
     override fun performPreCheck(card: Card): TangemSdkError? {
         if (card.status == CardStatus.NotPersonalized) {
@@ -38,6 +39,13 @@ class DeleteFileCommand(private val fileIndex: Int) : Command<DeleteFileResponse
             return TangemSdkError.FirmwareNotSupported()
         }
         return null
+    }
+
+    override fun mapError(card: Card?, error: TangemError): TangemError {
+        if (error is TangemSdkError.InvalidParams) {
+            return TangemSdkError.Pin2OrCvcRequired()
+        }
+        return error
     }
 
     override fun serialize(environment: SessionEnvironment): CommandApdu {

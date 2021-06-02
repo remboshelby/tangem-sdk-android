@@ -1,6 +1,5 @@
 package com.tangem.commands.common.card
 
-import com.squareup.moshi.JsonClass
 import com.tangem.commands.CommandResponse
 import com.tangem.commands.SignCommand
 import com.tangem.commands.common.card.masks.ProductMask
@@ -15,7 +14,6 @@ import java.util.*
 /**
  * Response for [ReadCommand]. Contains detailed card information.
  */
-@JsonClass(generateAdapter = true)
 data class Card(
 
     /**
@@ -164,7 +162,6 @@ data class Card(
 /**
  * Detailed information about card contents.
  */
-@JsonClass(generateAdapter = true)
 class CardData(
 
     /**

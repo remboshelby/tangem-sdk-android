@@ -1,6 +1,5 @@
 package com.tangem
 
-import com.squareup.moshi.JsonClass
 import com.tangem.commands.PinType
 
 /**
@@ -67,7 +66,6 @@ interface SessionViewDelegate {
 /**
  * Wrapper for a message that can be shown to user after a start of NFC session.
  */
-@JsonClass(generateAdapter = true)
 data class Message(val header: String? = null, val body: String? = null)
 
 enum class WrongValueType { CardId, CardType }
