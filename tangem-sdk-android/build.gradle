@@ -2,11 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: '../dependencies.gradle'
-apply from: '../upload.gradle'
 apply from: '../artifactConfig.gradle'
-
-group = "$artifactConfig.group"
-version = "$artifactConfig.version"
+apply from: '../upload.gradle'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 29
@@ -37,6 +35,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
 }
 
 dependencies {
