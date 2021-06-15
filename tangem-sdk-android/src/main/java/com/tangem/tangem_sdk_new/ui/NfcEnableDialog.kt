@@ -15,7 +15,7 @@ class NfcEnableDialog {
     fun show(activity: Activity) {
         val builder = MaterialAlertDialogBuilder(activity)
         builder.setCancelable(false)
-            .setIcon(R.drawable.ic_action_nfc_gray)
+//            .setIcon(R.drawable.ic_action_nfc_gray)
             .setTitle(R.string.dialog_nfc_enable_title)
             .setMessage(R.string.dialog_nfc_enable_text)
             .setPositiveButton(R.string.common_ok)
